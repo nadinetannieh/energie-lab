@@ -1,566 +1,230 @@
-<!DOCTYPE html>
+
+  
+
+    
+
+       
+
+      
+           
+    
+
+
+
+   
+          
+  
+        
+        
+    
+
+  
+
+        <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Énergie mécanique - ENERGIE-LAB</title>
+<title>Espace Élève | ENERGIE-LAB</title>
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f8fc;
-            color: #1f2937;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f8fc;
+    color: #1f2937;
+}
 
-        header {
-            background: #0b4f71;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header {
+    background: #0b4f71;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        header h1 {
-            margin: 0;
-        }
+header h1 {
+    margin: 0;
+}
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
+header a {
+    color: white;
+    text-decoration: none;
+}
 
-        .hero {
-            text-align: center;
-            padding: 45px 20px;
-            background: white;
-        }
+.hero {
+    background: white;
+    text-align: center;
+    padding: 50px 20px;
+}
 
-        .hero h2 {
-            color: #0b4f71;
-            font-size: 32px;
-        }
+.hero h2 {
+    color: #0b4f71;
+    font-size: 32px;
+}
 
-        .hero p {
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.7;
-        }
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.7;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+.container {
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
 
-        .section {
-            background: white;
-            margin-bottom: 25px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-        }
+.card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
 
-        .section h3 {
-            color: #0b4f71;
-        }
+.card h3 {
+    color: #0b4f71;
+}
 
-        .question {
-            margin-top: 20px;
-            padding: 20px;
-            background: #f5f8fc;
-            border-radius: 10px;
-        }
+.icon {
+    font-size: 40px;
+}
 
-        textarea {
-            width: 100%;
-            min-height: 80px;
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 7px;
-            box-sizing: border-box;
-            font-size: 15px;
-        }
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #0b4f71;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
 
-        select {
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 7px;
-            border: 1px solid #ccc;
-        }
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 22px;
-            background: #0b4f71;
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 7px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        .simulation {
-            width: 100%;
-            height: 650px;
-            border: none;
-            border-radius: 12px;
-        }
-
-        .resultat {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: #eef7ee;
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #666;
-        }
-
-    </style>
-
+</style>
 </head>
-
 
 <body>
 
-
 <header>
 
-    <h1>⚡ ENERGIE-LAB</h1>
+<h1>⚡ ENERGIE-LAB</h1>
 
-    <a href="index.html">← Accueil</a>
+<a href="index.html">← Accueil</a>
 
 </header>
 
 
-
 <section class="hero">
 
-    <h2>🔬 Module 1 — Travail et énergie mécanique</h2>
+<h2>👩‍🎓 Espace Élève</h2>
 
-    <p>
-        Activité : transformation et conservation de l'énergie mécanique.
-    </p>
-
-    <p>
-        Explore la situation, formule une hypothèse, manipule la simulation
-        puis construis progressivement ton explication.
-    </p>
+<p>
+Bienvenue dans ton espace d'apprentissage.
+Explore les activités, manipule les simulations
+et construis progressivement tes connaissances sur l'énergie.
+</p>
 
 </section>
-
 
 
 <div class="container">
 
 
+<!-- ACTIVITÉ 1 -->
 
-<!-- SITUATION PROBLEME -->
+<div class="card">
 
-<section class="section">
+<div class="icon">🔬</div>
 
-    <h3>1. 🧩 Situation-problème</h3>
+<h3>Activité 1 — Travail et énergie mécanique</h3>
 
-    <p>
-        Un skieur se trouve en hauteur sur une piste.
-        Lorsqu'il descend, sa vitesse augmente.
-    </p>
+<p>
+Explore une situation de mouvement à l'aide d'une simulation
+interactive et étudie les transformations des différentes
+formes d'énergie.
+</p>
 
-    <p>
-        <strong>
-            Que devient l'énergie du skieur pendant sa descente ?
-        </strong>
-    </p>
+<a class="button" href="activite1.html">
+Commencer l'activité →
+</a>
 
-    <div class="question">
+</div>
 
-        <p>
-            Avant d'utiliser la simulation, écris ton hypothèse :
-        </p>
 
-        <textarea
-            id="hypothese"
-            placeholder="Écris ici ton hypothèse...">
-        </textarea>
+<!-- FUTURE ACTIVITÉ 2 -->
 
-    </div>
+<div class="card">
 
-</section>
+<div class="icon">⚙️</div>
 
+<h3>Activité 2 — À venir</h3>
 
+<p>
+Cette activité sera ajoutée progressivement.
+</p>
 
-<!-- OBJECTIFS -->
+</div>
 
-<section class="section">
 
-    <h3>2. 🎯 Objectifs</h3>
+<!-- FUTURE ÉVALUATION -->
 
-    <ul>
+<div class="card">
 
-        <li>Observer l'évolution de l'énergie potentielle.</li>
+<div class="icon">📝</div>
 
-        <li>Observer l'évolution de l'énergie cinétique.</li>
+<h3>Évaluation</h3>
 
-        <li>Mettre en relation les deux formes d'énergie.</li>
+<p>
+Les activités d'évaluation seront ajoutées après
+la construction des modules pédagogiques.
+</p>
 
-        <li>Comprendre qualitativement l'énergie mécanique.</li>
-
-        <li>Étudier la conservation et la non-conservation de l'énergie mécanique.</li>
-
-    </ul>
-
-</section>
-
-
-
-<!-- SIMULATION -->
-
-<section class="section">
-
-    <h3>3. 🔬 Simulation interactive</h3>
-
-    <p>
-        Manipule la simulation.
-        Place le skieur en hauteur puis observe son mouvement.
-    </p>
-
-    <p>
-        Commence avec une situation <strong>sans frottement</strong>.
-    </p>
-
-
-    <iframe
-        class="simulation"
-        src="https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_fr.html">
-    </iframe>
-
-
-</section>
-
-
-
-<!-- OBSERVATION -->
-
-<section class="section">
-
-    <h3>4. 👀 Mes observations</h3>
-
-    <div class="question">
-
-        <p>
-            Lorsque le skieur descend, son énergie potentielle :
-        </p>
-
-        <select id="q1">
-
-            <option value="">-- Choisir --</option>
-
-            <option value="augmente">
-                augmente
-            </option>
-
-            <option value="diminue">
-                diminue
-            </option>
-
-            <option value="constante">
-                reste constante
-            </option>
-
-        </select>
-
-    </div>
-
-
-
-    <div class="question">
-
-        <p>
-            Lorsque le skieur descend, son énergie cinétique :
-        </p>
-
-        <select id="q2">
-
-            <option value="">-- Choisir --</option>
-
-            <option value="augmente">
-                augmente
-            </option>
-
-            <option value="diminue">
-                diminue
-            </option>
-
-            <option value="constante">
-                reste constante
-            </option>
-
-        </select>
-
-    </div>
-
-
-
-    <div class="question">
-
-        <p>
-            Sans frottement, l'énergie mécanique :
-        </p>
-
-        <select id="q3">
-
-            <option value="">-- Choisir --</option>
-
-            <option value="conservee">
-                reste constante
-            </option>
-
-            <option value="diminue">
-                diminue
-            </option>
-
-            <option value="augmente">
-                augmente
-            </option>
-
-        </select>
-
-    </div>
-
-
-
-    <button class="button" onclick="verifierObservations()">
-        Vérifier mes réponses
-    </button>
-
-
-    <div id="resultat" class="resultat"></div>
-
-</section>
-
-
-
-<!-- FROTTEMENTS -->
-
-<section class="section">
-
-    <h3>5. 🧪 Investigation : les frottements</h3>
-
-    <p>
-        Retourne dans la simulation et active maintenant les frottements.
-    </p>
-
-    <div class="question">
-
-        <p>
-            Que remarques-tu concernant l'énergie mécanique ?
-        </p>
-
-        <textarea
-            placeholder="Écris ici ton observation...">
-        </textarea>
-
-    </div>
-
-
-    <div class="question">
-
-        <p>
-            Pourquoi l'énergie mécanique n'est-elle plus conservée
-            dans cette situation ?
-        </p>
-
-        <textarea
-            placeholder="Écris ton explication...">
-        </textarea>
-
-    </div>
-
-</section>
-
-
-
-<!-- CONCLUSION -->
-
-<section class="section">
-
-    <h3>6. 🧠 Ce que j'ai compris</h3>
-
-    <p>
-        Complète les phrases suivantes :
-    </p>
-
-    <div class="question">
-
-        <p>
-            Lorsque le skieur descend, son énergie
-            <strong>__________</strong>
-            diminue tandis que son énergie
-            <strong>__________</strong>
-            augmente.
-        </p>
-
-        <textarea
-            placeholder="Ta réponse...">
-        </textarea>
-
-    </div>
-
-
-    <div class="question">
-
-        <p>
-            En absence de frottements, l'énergie mécanique
-            <strong>__________</strong>.
-        </p>
-
-        <textarea
-            placeholder="Ta réponse...">
-        </textarea>
-
-    </div>
-
-</section>
-
-
-
-<!-- EVALUATION -->
-
-<section class="section">
-
-    <h3>7. ✅ Évaluation rapide</h3>
-
-    <p>
-        Si l'énergie potentielle diminue et qu'il n'y a pas de frottement,
-        que devient principalement cette énergie ?
-    </p>
-
-    <select id="evaluation">
-
-        <option value="">-- Choisir --</option>
-
-        <option value="cinétique">
-            Elle se transforme principalement en énergie cinétique.
-        </option>
-
-        <option value="disparait">
-            Elle disparaît complètement.
-        </option>
-
-        <option value="masse">
-            Elle se transforme en masse.
-        </option>
-
-    </select>
-
-    <br>
-
-    <button class="button" onclick="verifierEvaluation()">
-        Vérifier
-    </button>
-
-    <div id="evaluationResultat" class="resultat"></div>
-
-</section>
-
+</div>
 
 
 </div>
 
 
-
 <footer>
 
-    ENERGIE-LAB — Prototype pédagogique
+ENERGIE-LAB — Prototype pédagogique
 
 </footer>
 
+</body>
 
+</html>
 
-<script>
-
-
-function verifierObservations() {
-
-    let q1 = document.getElementById("q1").value;
-
-    let q2 = document.getElementById("q2").value;
-
-    let q3 = document.getElementById("q3").value;
-
-    let resultat = document.getElementById("resultat");
-
-
-    if (
-        q1 === "diminue" &&
-        q2 === "augmente" &&
-        q3 === "conservee"
-    ) {
-
-        resultat.style.display = "block";
-
-        resultat.innerHTML =
-            "✅ Très bien ! Tes observations sont correctes. " +
-            "Tu as identifié la transformation de l'énergie potentielle " +
-            "en énergie cinétique et la conservation de l'énergie mécanique " +
-            "dans le cas sans frottement.";
-
-    } else {
-
-        resultat.style.display = "block";
-
-        resultat.innerHTML =
-            "🔎 Certaines réponses sont à revoir. " +
-            "Retourne dans la simulation et observe attentivement " +
-            "la hauteur, la vitesse et les différentes formes d'énergie.";
-
-    }
-
-}
+  
 
 
 
-function verifierEvaluation() {
-
-    let evaluation =
-        document.getElementById("evaluation").value;
-
-    let resultat =
-        document.getElementById("evaluationResultat");
 
 
-    resultat.style.display = "block";
 
 
-    if (evaluation === "cinétique") {
 
-        resultat.innerHTML =
-            "✅ Correct ! Sans frottement, la diminution de l'énergie " +
-            "potentielle est associée à une augmentation de l'énergie cinétique.";
+        
 
-    } else {
 
-        resultat.innerHTML =
-            "❌ Recommence et observe la transformation entre énergie " +
-            "potentielle et énergie cinétique dans la simulation.";
 
-    }
 
-}
 
-</script>
+  
+    
+
+
 
 
 </body>
