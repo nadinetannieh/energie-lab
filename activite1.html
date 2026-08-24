@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Activité 1 - Énergie mécanique | ENERGIE-LAB</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f8fc;
+    color: #1f2937;
+}
+
+header {
+    background: #0b4f71;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+.progress-container {
+    background: #dce8ef;
+    height: 8px;
+}
+
+.progress-bar {
+    background: #0b4f71;
+    width: 14%;
+    height: 8px;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h2 {
+    color: #0b4f71;
+    font-size: 30px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.card h3 {
+    color: #0b4f71;
+}
+
+.question {
+    background: #f5f8fc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #0b4f71;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.simulation {
+    width: 100%;
+    height: 650px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #eef7ee;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>⚡ ENERGIE-LAB</h1>
+
+<a href="eleve.html">← Espace Élève</a>
+
+</header>
+
+
+<div class="progress-container">
+<div class="progress-bar"></div>
+</div>
+
+
+<section class="hero">
+
+<h2>🔬 Activité 1 — Énergie mécanique</h2>
+
+<p>
+Explore une situation de mouvement et observe les transformations
+des différentes formes d'énergie.
+</p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- ÉTAPE 1 -->
+
+<section class="card">
+
+<h3>Étape 1 — Situation-problème</h3>
+
+<p>
+Un skieur est placé sur une piste à une certaine hauteur.
+Lorsqu'il descend, sa vitesse évolue.
+</p>
+
+<p>
+<strong>
+Avant d'utiliser la simulation, observe la situation et formule
+une hypothèse sur l'évolution des formes d'énergie du système.
+</strong>
+</p>
+
+<div class="question">
+
+<label for="hypothese">
+<strong>Mon hypothèse :</strong>
+</label>
+
+<textarea
+id="hypothese"
+placeholder="Écris ton hypothèse ici..."></textarea>
+
+</div>
+
+</section>
+
+
+<!-- ÉTAPE 2 -->
+
+<section class="card">
+
+<h3>Étape 2 — Découverte de la simulation</h3>
+
+<p>
+Ouvre la simulation et commence par explorer librement.
+Ne cherche pas encore à répondre aux questions.
+Observe simplement le mouvement du skieur et les indicateurs d'énergie.
+</p>
+
+<iframe
+class="simulation"
+src="https://phet.colorado.edu/sims/html/energy-skate-park/latest/energy-skate-park_fr.html">
+</iframe>
+
+</section>
+
+
+<!-- ÉTAPE 3 -->
+
+<section class="card">
+
+<h3>Étape 3 — Première observation</h3>
+
+<p>
+Place le skieur en hauteur puis laisse-le descendre.
+Commence sans frottement.
+</p>
+
+<div class="question">
+
+<p>
+<strong>Observation :</strong>
+Que remarques-tu lorsque la hauteur du skieur diminue ?
+</p>
+
+<textarea
+placeholder="Écris ce que tu observes..."></textarea>
+
+</div>
+
+<div class="question">
+
+<p>
+Que remarques-tu concernant sa vitesse ?
+</p>
+
+<textarea
+placeholder="Écris ton observation..."></textarea>
+
+</div>
+
+</section>
+
+
+<!-- ÉTAPE 4 -->
+
+<section class="card">
+
+<h3>Étape 4 — Mise en relation</h3>
+
+<p>
+À partir de tes observations dans la simulation, compare
+les différentes formes d'énergie.
+</p>
+
+<div class="question">
+
+<p>
+Lorsque le skieur descend, comment évolue son énergie potentielle
+de pesanteur ?
+</p>
+
+<textarea
+placeholder="Ta réponse..."></textarea>
+
+</div>
+
+<div class="question">
+
+<p>
+Comment évolue son énergie cinétique ?
+</p>
+
+<textarea
+placeholder="Ta réponse..."></textarea>
+
+</div>
+
+</section>
+
+
+<!-- ÉTAPE 5 -->
+
+<section class="card">
+
+<h3>Étape 5 — Conservation de l'énergie mécanique</h3>
+
+<p>
+Observe maintenant l'indicateur correspondant à l'énergie mécanique.
+Toujours sans frottement.
+</p>
+
+<div class="question">
+
+<p>
+<strong>
+Que remarques-tu concernant l'énergie mécanique pendant le mouvement ?
+</strong>
+</p>
+
+<textarea
+placeholder="Écris ton observation..."></textarea>
+
+</div>
+
+</section>
+
+
+<!-- ÉTAPE 6 -->
+
+<section class="card">
+
+<h3>Étape 6 — Investigation avec frottement</h3>
+
+<p>
+Active maintenant les frottements dans la simulation.
+Observe à nouveau le mouvement et les indicateurs d'énergie.
+</p>
+
+<div class="question">
+
+<p>
+Que remarques-tu concernant l'énergie mécanique ?
+</p>
+
+<textarea
+placeholder="Écris ton observation..."></textarea>
+
+</div>
+
+<div class="question">
+
+<p>
+Propose une explication à ce changement.
+</p>
+
+<textarea
+placeholder="Écris ton explication..."></textarea>
+
+</div>
+
+</section>
+
+
+<!-- ÉTAPE 7 -->
+
+<section class="card">
+
+<h3>Étape 7 — Bilan</h3>
+
+<p>
+À partir de tes observations, écris avec tes propres mots
+ce que tu as compris sur les transformations d'énergie
+pendant le mouvement.
+</p>
+
+<textarea
+placeholder="Mon bilan..."></textarea>
+
+
+<button class="button" onclick="terminerActivite()">
+Terminer l'activité
+</button>
+
+<div id="message" class="message">
+
+<strong>🎉 Activité terminée !</strong>
+
+<p>
+Tu peux maintenant retourner dans ton espace Élève.
+</p>
+
+<a class="button" href="eleve.html">
+Retour à l'espace Élève
+</a>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+ENERGIE-LAB — Prototype pédagogique
+
+</footer>
+
+
+<script>
+
+function terminerActivite() {
+
+    document.getElementById("message").style.display = "block";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
