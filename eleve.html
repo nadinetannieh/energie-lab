@@ -2,10 +2,13 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ENERGIE-LAB — Partie 1 : Travail et énergie mécanique</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ENERGIE-LAB — Espace Élève</title>
 
     <style>
 
@@ -42,12 +45,12 @@
         .hero {
             background: white;
             text-align: center;
-            padding: 55px 20px;
+            padding: 50px 20px;
         }
 
         .hero h2 {
             color: #0b4f71;
-            font-size: 30px;
+            font-size: 32px;
             margin-bottom: 15px;
         }
 
@@ -58,99 +61,97 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 950px;
             margin: 35px auto;
             padding: 0 20px;
         }
 
-        .intro {
+        .card {
             background: white;
             padding: 30px;
+            margin-bottom: 25px;
             border-radius: 15px;
-            margin-bottom: 30px;
             box-shadow: 0 5px 18px rgba(0,0,0,0.07);
         }
 
-        .intro h3 {
+        .card h3 {
             color: #0b4f71;
             margin-top: 0;
         }
 
-        .chapter {
-            background: white;
-            padding: 28px;
-            margin-bottom: 22px;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-            border-left: 6px solid #9aa7af;
+        .choice-group {
+            margin-top: 25px;
         }
 
-        .chapter.prioritaire {
-            border-left: 6px solid #0b4f71;
-        }
-
-        .chapter h3 {
-            color: #0b4f71;
-            margin-top: 8px;
-            line-height: 1.4;
-        }
-
-        .chapter p {
-            line-height: 1.7;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: #e8f0f5;
-            color: #0b4f71;
-            font-size: 13px;
+        label {
+            display: block;
+            margin-bottom: 8px;
             font-weight: bold;
         }
 
-        .badge-prioritaire {
-            background: #dcecf4;
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
         }
 
         .button {
             display: inline-block;
-            margin-top: 12px;
-            padding: 12px 22px;
+            margin-top: 20px;
+            padding: 13px 24px;
             background: #0b4f71;
             color: white;
-            text-decoration: none;
-            border-radius: 8px;
             border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .button:hover {
             opacity: 0.9;
         }
 
-        .button-disabled {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 12px 22px;
-            background: #aab4ba;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .parcours {
-            background: #eef5f8;
-            padding: 25px;
-            border-radius: 12px;
+        .message {
+            display: none;
             margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #eef5f8;
+            line-height: 1.7;
         }
 
-        .parcours h3 {
+        .programme {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .partie {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        }
+
+        .partie h3 {
             color: #0b4f71;
         }
 
-        .parcours ol {
-            line-height: 2;
+        .chapitre {
+            margin-top: 15px;
+            padding: 18px;
+            background: #f5f8fc;
+            border-radius: 10px;
+        }
+
+        .chapitre strong {
+            color: #0b4f71;
+        }
+
+        .prioritaire {
+            border-left: 5px solid #0b4f71;
         }
 
         footer {
@@ -179,17 +180,15 @@
 
 <section class="hero">
 
-    <h2>PARTIE 1 : Travail et énergie mécanique</h2>
+    <h2>👩‍🎓 Espace Élève</h2>
 
     <p>
-        <strong>Parcours interactif — 1ère année du baccalauréat
-        Sciences physiques</strong>
+        Bienvenue dans ton espace d'apprentissage.
     </p>
 
     <p>
-        Découvre, explore et mobilise progressivement les notions
-        liées au travail et à l'énergie à travers des activités,
-        des situations-problèmes et des simulations.
+        Choisis ton niveau et ta filière pour accéder
+        au parcours correspondant.
     </p>
 
 </section>
@@ -199,237 +198,270 @@
 <div class="container">
 
 
-<!-- INTRODUCTION -->
+<!-- CHOIX DU PARCOURS -->
 
-<section class="intro">
+<section class="card">
 
-    <h3>📚 Bienvenue dans ton parcours</h3>
-
-    <p>
-        Cette partie est organisée en sept chapitres.
-        Les premiers chapitres permettent de mobiliser et de renforcer
-        les connaissances nécessaires pour poursuivre le parcours.
-    </p>
+    <h3>🧭 Choisis ton parcours</h3>
 
     <p>
-        Les chapitres suivants proposent progressivement des activités
-        d'investigation et des simulations interactives afin de construire
-        et de mobiliser les connaissances relatives au concept d'énergie.
+        Sélectionne d'abord ton niveau d'étude.
     </p>
 
-    <div class="parcours">
 
-        <h3>🧭 Organisation du parcours</h3>
+    <div class="choice-group">
 
-        <ol>
+        <label for="niveau">
+            Niveau d'étude
+        </label>
 
-            <li>
-                Chapitres 1 à 3 :
-                rappels et activités d'application
-            </li>
+        <select id="niveau">
 
-            <li>
-                Chapitre 4 :
-                premier module approfondi du prototype
-            </li>
+            <option value="">
+                -- Choisir mon niveau --
+            </option>
 
-            <li>
-                Chapitre 5 :
-                approfondissement et mise en relation des notions
-            </li>
+            <option value="1bac">
+                1ère année du baccalauréat
+            </option>
 
-            <li>
-                Chapitres 6 et 7 :
-                approfondissement du concept d'énergie
-            </li>
+            <option value="autre">
+                Autre niveau
+            </option>
 
-        </ol>
+        </select>
 
+    </div>
+
+
+    <div class="choice-group">
+
+        <label for="filiere">
+            Filière
+        </label>
+
+        <select id="filiere">
+
+            <option value="">
+                -- Choisir ma filière --
+            </option>
+
+            <option value="sciences-experimentales">
+                Sciences expérimentales
+            </option>
+
+            <option value="sciences-mathematiques">
+                Sciences mathématiques
+            </option>
+
+            <option value="autre">
+                Autre filière
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <button class="button"
+            onclick="afficherParcours()">
+
+        Continuer →
+
+    </button>
+
+
+    <div id="message"
+         class="message">
     </div>
 
 </section>
 
 
 
-<!-- CHAPITRE 1 -->
+<!-- PROGRAMME -->
 
-<section class="chapter">
-
-    <span class="badge">
-        🔄 Rappel et application
-    </span>
-
-    <h3>
-        Chapitre 1 — Mouvement de rotation d'un solide indéformable
-        autour d'un axe fixe
-    </h3>
-
-    <p>
-        Mobilisation des connaissances nécessaires à la suite
-        du parcours à travers des rappels et des activités d'application.
-    </p>
-
-    <a class="button-disabled" href="#">
-        Activité à venir
-    </a>
-
-</section>
+<section id="programme"
+         class="programme">
 
 
+    <div class="partie">
 
-<!-- CHAPITRE 2 -->
+        <h3>
+            📚 Programme
+        </h3>
 
-<section class="chapter">
 
-    <span class="badge">
-        🔄 Rappel et application
-    </span>
+        <h2>
+            PARTIE 1 :
+            Travail et énergie mécanique
+        </h2>
 
-    <h3>
-        Chapitre 2 — Travail et puissance d'une force
-    </h3>
 
-    <p>
-        Rappel et mobilisation des notions de travail et de puissance
-        à travers des activités d'application.
-    </p>
+        <p>
+            Parcours correspondant à ton niveau
+            et à ta filière.
+        </p>
 
-    <a class="button-disabled" href="#">
-        Activité à venir
-    </a>
 
-</section>
+        <!-- CHAPITRE 1 -->
+
+        <div class="chapitre">
+
+            <strong>
+                Chapitre 1
+            </strong>
+
+            <p>
+                Mouvement de rotation d'un corps solide
+                non déformable autour d'un axe fixe
+            </p>
+
+            <small>
+                Rappel et activités d'application —
+                contenu à construire.
+            </small>
+
+        </div>
 
 
 
-<!-- CHAPITRE 3 -->
+        <!-- CHAPITRE 2 -->
 
-<section class="chapter">
+        <div class="chapitre">
 
-    <span class="badge">
-        🔄 Rappel et application
-    </span>
+            <strong>
+                Chapitre 2
+            </strong>
 
-    <h3>
-        Chapitre 3 — Travail et énergie cinétique
-    </h3>
+            <p>
+                Travail et puissance d'une force
+            </p>
 
-    <p>
-        Mobilisation des notions nécessaires pour aborder
-        les différentes formes et transformations de l'énergie.
-    </p>
+            <small>
+                Rappel et activités d'application —
+                contenu à construire.
+            </small>
 
-    <a class="button-disabled" href="#">
-        Activité à venir
-    </a>
-
-</section>
+        </div>
 
 
 
-<!-- CHAPITRE 4 -->
+        <!-- CHAPITRE 3 -->
 
-<section class="chapter prioritaire">
+        <div class="chapitre">
 
-    <span class="badge badge-prioritaire">
-        ⭐ MODULE PRIORITAIRE — PROTOTYPE
-    </span>
+            <strong>
+                Chapitre 3
+            </strong>
 
-    <h3>
-        Chapitre 4 — Travail et énergie potentielle de pesanteur
-    </h3>
+            <p>
+                Travail et énergie cinétique
+            </p>
 
-    <p>
-        Ce chapitre constitue le premier module approfondi
-        de notre prototype.
-    </p>
+            <small>
+                Rappel et activités d'application —
+                contenu à construire.
+            </small>
 
-    <p>
-        Il sera construit à partir des orientations du programme,
-        avec une situation-problème, une simulation interactive,
-        des activités d'investigation, des questions guidées
-        et une phase de conceptualisation.
-    </p>
-
-    <a class="button" href="#">
-        Module en construction
-    </a>
-
-</section>
+        </div>
 
 
 
-<!-- CHAPITRE 5 -->
+        <!-- CHAPITRE 4 -->
 
-<section class="chapter prioritaire">
+        <div class="chapitre prioritaire">
 
-    <span class="badge badge-prioritaire">
-        ⭐ APPROFONDISSEMENT
-    </span>
+            <strong>
+                ⭐ Chapitre 4
+            </strong>
 
-    <h3>
-        Chapitre 5 — Énergie mécanique d'un solide
-    </h3>
+            <p>
+                Travail et énergie potentielle
+                de pesanteur
+            </p>
 
-    <p>
-        Approfondissement des relations entre les différentes
-        formes d'énergie et étude des transformations de l'énergie
-        mécanique.
-    </p>
+            <small>
+                Module prioritaire du prototype.
+            </small>
 
-    <a class="button-disabled" href="#">
-        Module à construire
-    </a>
+            <br>
 
-</section>
+            <a class="button"
+               href="#">
 
+                Accéder au chapitre →
 
+            </a>
 
-<!-- CHAPITRE 6 -->
-
-<section class="chapter prioritaire">
-
-    <span class="badge badge-prioritaire">
-        ⭐ APPROFONDISSEMENT
-    </span>
-
-    <h3>
-        Chapitre 6 — Travail et énergie interne
-    </h3>
-
-    <p>
-        Étude des transformations et des échanges d'énergie
-        associés à l'énergie interne.
-    </p>
-
-    <a class="button-disabled" href="#">
-        Module à construire
-    </a>
-
-</section>
+        </div>
 
 
 
-<!-- CHAPITRE 7 -->
+        <!-- CHAPITRE 5 -->
 
-<section class="chapter prioritaire">
+        <div class="chapitre prioritaire">
 
-    <span class="badge badge-prioritaire">
-        ⭐ APPROFONDISSEMENT
-    </span>
+            <strong>
+                ⭐ Chapitre 5
+            </strong>
 
-    <h3>
-        Chapitre 7 — Énergie thermique : transfert thermique
-    </h3>
+            <p>
+                Énergie mécanique d'un corps solide
+            </p>
 
-    <p>
-        Étude des transferts thermiques et de leur rôle
-        dans les transformations énergétiques.
-    </p>
+            <small>
+                Module prioritaire du prototype —
+                contenu à construire.
+            </small>
 
-    <a class="button-disabled" href="#">
-        Module à construire
-    </a>
+        </div>
+
+
+
+        <!-- CHAPITRE 6 -->
+
+        <div class="chapitre prioritaire">
+
+            <strong>
+                ⭐ Chapitre 6
+            </strong>
+
+            <p>
+                Travail et énergie interne
+            </p>
+
+            <small>
+                Module prioritaire du prototype —
+                contenu à construire.
+            </small>
+
+        </div>
+
+
+
+        <!-- CHAPITRE 7 -->
+
+        <div class="chapitre prioritaire">
+
+            <strong>
+                ⭐ Chapitre 7
+            </strong>
+
+            <p>
+                Énergie thermique :
+                transfert thermique
+            </p>
+
+            <small>
+                Module prioritaire du prototype —
+                contenu à construire.
+            </small>
+
+        </div>
+
+
+    </div>
 
 </section>
 
@@ -443,6 +475,81 @@
     ENERGIE-LAB — Prototype pédagogique
 
 </footer>
+
+
+
+<script>
+
+
+function afficherParcours() {
+
+    let niveau =
+        document.getElementById("niveau").value;
+
+    let filiere =
+        document.getElementById("filiere").value;
+
+    let message =
+        document.getElementById("message");
+
+    let programme =
+        document.getElementById("programme");
+
+
+    message.style.display = "none";
+
+    programme.style.display = "none";
+
+
+    if (niveau === "") {
+
+        message.style.display = "block";
+
+        message.innerHTML =
+            "⚠️ Veuillez d'abord choisir votre niveau.";
+
+        return;
+    }
+
+
+    if (filiere === "") {
+
+        message.style.display = "block";
+
+        message.innerHTML =
+            "⚠️ Veuillez choisir votre filière.";
+
+        return;
+    }
+
+
+    if (
+        niveau === "1bac" &&
+        (
+            filiere === "sciences-experimentales" ||
+            filiere === "sciences-mathematiques"
+        )
+    ) {
+
+        programme.style.display = "block";
+
+        programme.scrollIntoView({
+            behavior: "smooth"
+        });
+
+        return;
+    }
+
+
+    message.style.display = "block";
+
+    message.innerHTML =
+        "🚧 Ce parcours sera disponible dans une prochaine version du prototype.";
+
+}
+
+
+</script>
 
 
 </body>
