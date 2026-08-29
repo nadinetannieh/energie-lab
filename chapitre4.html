@@ -2,253 +2,221 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Travail et énergie potentielle de pesanteur - ENERGIE-LAB</title>
+<title>Chapitre 4 — Travail et énergie potentielle de pesanteur</title>
 
 <style>
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    color:#1f2937;
+* {
+    box-sizing: border-box;
 }
 
-header{
-    background:#0b4f71;
-    color:white;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
 }
 
-header h1{
-    margin:0;
+header {
+    background: #0b4f71;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header a{
-    color:white;
-    text-decoration:none;
+header h1 {
+    margin: 0;
+    font-size: 24px;
 }
 
-.hero{
-    background:white;
-    text-align:center;
-    padding:40px 20px;
+header a {
+    color: white;
+    text-decoration: none;
 }
 
-.hero h2{
-    color:#0b4f71;
-    font-size:31px;
-    margin-bottom:15px;
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 20px;
 }
 
-.hero p{
-    max-width:850px;
-    margin:10px auto;
-    line-height:1.7;
+.hero h2 {
+    color: #0b4f71;
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
-.container{
-    max-width:1050px;
-    margin:30px auto;
-    padding:0 20px;
+.hero p {
+    max-width: 850px;
+    margin: 10px auto;
+    line-height: 1.7;
 }
 
-.section{
-    background:white;
-    padding:30px;
-    margin-bottom:25px;
-    border-radius:15px;
-    box-shadow:0 4px 16px rgba(0,0,0,.07);
+.container {
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
-.section h3{
-    color:#0b4f71;
-    margin-top:0;
+.section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
 }
 
-.objectif{
-    background:#eef6fa;
-    padding:18px;
-    border-left:5px solid #0b4f71;
-    border-radius:8px;
-    margin:20px 0;
+.section h3 {
+    color: #0b4f71;
+    margin-top: 0;
 }
 
-.question{
-    background:#f6f8fb;
-    padding:20px;
-    border-radius:10px;
-    margin:18px 0;
+.section h4 {
+    color: #0b4f71;
+}
+
+.card {
+    background: #f5f8fc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.objectif {
+    border-left: 5px solid #0b4f71;
+    background: #eef5f9;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.question {
+    background: #f7f9fc;
+    padding: 20px;
+    margin-top: 18px;
+    border-radius: 10px;
 }
 
 select,
-input{
-    padding:10px;
-    border:1px solid #cbd5e1;
-    border-radius:7px;
-    font-size:15px;
-    margin-top:8px;
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-top: 8px;
 }
 
-input{
-    width:110px;
+textarea {
+    min-height: 90px;
+    resize: vertical;
 }
 
-.button{
-    display:inline-block;
-    padding:12px 22px;
-    margin-top:10px;
-    background:#0b4f71;
-    color:white;
-    border:none;
-    border-radius:7px;
-    cursor:pointer;
-    font-size:15px;
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #0b4f71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
 }
 
-.button:hover{
-    opacity:.9;
+.button:hover {
+    opacity: 0.9;
 }
 
-.resultat{
-    display:none;
-    margin-top:18px;
-    padding:18px;
-    border-radius:10px;
+.secondary {
+    background: #64748b;
 }
 
-.correct{
-    background:#eaf7ee;
-    border-left:5px solid #2e8b57;
+.success {
+    background: #eef8ef;
+    border-left: 5px solid #4b8b4b;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
-.incorrect{
-    background:#fff1f1;
-    border-left:5px solid #d9534f;
+.error {
+    background: #fff1f1;
+    border-left: 5px solid #c0392b;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
-.info{
-    background:#fff8df;
-    padding:15px;
-    border-radius:8px;
-    margin:15px 0;
+.hidden {
+    display: none;
 }
 
-.barrage{
-    width:100%;
-    max-height:400px;
-    object-fit:cover;
-    border-radius:14px;
-    margin:15px 0;
+.formula {
+    text-align: center;
+    font-size: 22px;
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-weight: bold;
 }
 
-.schema{
-    background:#eef6fa;
-    border-radius:15px;
-    padding:25px;
-    margin:20px 0;
-    text-align:center;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
 }
 
-.plan{
-    position:relative;
-    height:260px;
-    background:linear-gradient(to bottom,#eef6fa,#dceef7);
-    border-radius:12px;
-    overflow:hidden;
-    margin-top:20px;
+.data-box {
+    background: #f5f8fc;
+    padding: 18px;
+    border-radius: 10px;
 }
 
-.table{
-    position:absolute;
-    left:10%;
-    bottom:55px;
-    width:55%;
-    height:12px;
-    background:#8b5e3c;
+.data-box strong {
+    color: #0b4f71;
 }
 
-.etagere{
-    position:absolute;
-    left:10%;
-    bottom:145px;
-    width:55%;
-    height:12px;
-    background:#8b5e3c;
+.badge {
+    display: inline-block;
+    background: #e5eef4;
+    color: #0b4f71;
+    padding: 7px 12px;
+    border-radius: 20px;
+    margin: 4px;
+    font-size: 14px;
 }
 
-.sol{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:55px;
-    background:#c9b28a;
+.simulation-box {
+    background: #eef5f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
 }
 
-.livre{
-    position:absolute;
-    width:70px;
-    height:35px;
-    background:#d86b4b;
-    border-radius:4px;
+canvas {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    display: block;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #dbe3ea;
 }
 
-.livreA{
-    left:20%;
-    bottom:67px;
-}
-
-.livreB{
-    left:20%;
-    bottom:157px;
-}
-
-.pointA,
-.pointB{
-    position:absolute;
-    left:29%;
-    font-weight:bold;
-}
-
-.pointA{
-    bottom:72px;
-}
-
-.pointB{
-    bottom:162px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-}
-
-.valuebox{
-    background:#f6f8fb;
-    padding:15px;
-    border-radius:10px;
-}
-
-.formule{
-    font-size:22px;
-    text-align:center;
-    background:#eef6fa;
-    padding:20px;
-    border-radius:10px;
-    margin:20px 0;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#666;
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #777;
 }
 
 </style>
@@ -261,44 +229,45 @@ footer{
 
 <header>
 
-<h1>⚡ ENERGIE-LAB</h1>
+    <h1>⚡ ENERGIE-LAB</h1>
 
-<a href="index.html">← Accueil</a>
+    <a href="index.html">← Accueil</a>
 
 </header>
 
 
-
 <section class="hero">
 
-<h2>Travail et énergie potentielle de pesanteur</h2>
+    <h2>
+        <strong>Travail et énergie potentielle de pesanteur</strong>
+    </h2>
 
-<p>
-<strong>Chapitre 4</strong>
-</p>
+    <p>
+        Chapitre 4 — Première année du baccalauréat
+    </p>
 
-<p>
-Dans ce chapitre, tu vas découvrir progressivement ce qu'est
-l'énergie potentielle de pesanteur, de quoi elle dépend et comment
-elle est liée au travail du poids.
-</p>
+    <p>
+        Construire la notion d'énergie potentielle de pesanteur
+        et établir son lien avec le travail du poids.
+    </p>
 
 </section>
-
 
 
 <div class="container">
 
 
-
-<!-- PREREQUIS -->
+<!-- ================================================= -->
+<!-- 1. PREREQUIS -->
+<!-- ================================================= -->
 
 <section class="section">
 
 <h3>1. 🔎 Je vérifie mes prérequis</h3>
 
 <p>
-Avant de commencer, vérifie que tu maîtrises les notions nécessaires.
+Avant de commencer, vérifie les connaissances nécessaires
+pour aborder ce chapitre.
 </p>
 
 
@@ -306,25 +275,27 @@ Avant de commencer, vérifie que tu maîtrises les notions nécessaires.
 
 <p>
 <strong>Question 1.</strong>
-Le travail d'une force constante
-<strong>F</strong> dont le point d'application se déplace
-d'un point A à un point B suivant un trajet quelconque est :
+Le travail d'une force constante F dont le point d'application
+se déplace d'un point A à un point B suivant un trajet quelconque
+s'exprime par :
 </p>
 
 <select id="pre1">
 
-<option value="">-- Choisir --</option>
+<option value="">
+-- Choisir --
+</option>
 
 <option value="a">
-W<sub>AB</sub>(F) = F × AB × cos(α)
+W<sub>AB</sub>(F) = F × AB
 </option>
 
 <option value="b">
-W<sub>AB</sub>(F) = m × g × h
+W<sub>AB</sub>(F) = F × AB × cos(α)
 </option>
 
 <option value="c">
-W<sub>AB</sub>(F) = 1/2 mv²
+W<sub>AB</sub>(F) = F / AB
 </option>
 
 </select>
@@ -332,58 +303,60 @@ W<sub>AB</sub>(F) = 1/2 mv²
 </div>
 
 
-
 <div class="question">
 
 <p>
 <strong>Question 2.</strong>
-L'énergie cinétique d'un solide de masse m animé
-d'une vitesse v est :
+L'unité du travail d'une force dans le Système international est :
 </p>
 
 <select id="pre2">
 
-<option value="">-- Choisir --</option>
+<option value="">
+-- Choisir --
+</option>
 
 <option value="a">
-E<sub>c</sub> = mv
+Le watt (W)
 </option>
 
 <option value="b">
-E<sub>c</sub> = 1/2 mv²
+Le joule (J)
 </option>
 
 <option value="c">
-E<sub>c</sub> = mgz
+Le newton (N)
 </option>
 
 </select>
 
 </div>
-
 
 
 <div class="question">
 
 <p>
 <strong>Question 3.</strong>
-Le théorème de l'énergie cinétique entre A et B s'écrit :
+L'énergie cinétique d'un solide de masse m animé d'une vitesse v
+s'exprime par :
 </p>
 
 <select id="pre3">
 
-<option value="">-- Choisir --</option>
+<option value="">
+-- Choisir --
+</option>
 
 <option value="a">
-ΔE<sub>c</sub> = ΣW<sub>AB</sub>(F)
+Ec = mv
 </option>
 
 <option value="b">
-ΔE<sub>c</sub> = mgz
+Ec = mgh
 </option>
 
 <option value="c">
-ΔE<sub>c</sub> = 0 dans tous les cas
+Ec = ½mv²
 </option>
 
 </select>
@@ -391,662 +364,1096 @@ Le théorème de l'énergie cinétique entre A et B s'écrit :
 </div>
 
 
+<div class="question">
 
-<button class="button" onclick="corrigerPrerequis()">
+<p>
+<strong>Question 4.</strong>
+Lorsqu'un solide descend sur un plan incliné sans frottement,
+son énergie cinétique :
+</p>
+
+<select id="pre4">
+
+<option value="">
+-- Choisir --
+</option>
+
+<option value="a">
+augmente
+</option>
+
+<option value="b">
+diminue
+</option>
+
+<option value="c">
+reste nécessairement constante
+</option>
+
+</select>
+
+</div>
+
+
+<button class="button" onclick="verifierPrerequis()">
 Vérifier mes prérequis
 </button>
 
-<div id="resultatPrerequis" class="resultat"></div>
+
+<div id="resultatPrerequis"></div>
 
 </section>
 
 
-
-<!-- SITUATION -->
+<!-- ================================================= -->
+<!-- 2. SITUATION PROBLEME -->
+<!-- ================================================= -->
 
 <section class="section">
 
-<h3>2. 🌊 Situation-problème</h3>
+<h3>2. 🌍 Situation-problème</h3>
+
+<div class="card">
+
+<svg viewBox="0 0 900 380"
+     width="100%"
+     role="img"
+     aria-label="Illustration d'un barrage contenant de l'eau en hauteur">
+
+    <!-- ciel -->
+    <rect x="0" y="0" width="900" height="380"
+          fill="#eef5f9"/>
+
+    <!-- montagne -->
+    <polygon points="0,280 170,100 320,280"
+             fill="#cbd5e1"/>
+
+    <polygon points="580,280 730,80 900,280"
+             fill="#cbd5e1"/>
+
+    <!-- eau -->
+    <rect x="120" y="125" width="460" height="155"
+          fill="#8ecae6"/>
+
+    <!-- barrage -->
+    <polygon points="580,80 690,80 730,300 580,300"
+             fill="#64748b"/>
+
+    <!-- niveau eau -->
+    <line x1="120" y1="125"
+          x2="580" y2="125"
+          stroke="#0b4f71"
+          stroke-width="4"/>
+
+    <!-- turbine -->
+    <circle cx="755" cy="255"
+            r="35"
+            fill="white"
+            stroke="#0b4f71"
+            stroke-width="5"/>
+
+    <line x1="755" y1="220"
+          x2="755" y2="290"
+          stroke="#0b4f71"
+          stroke-width="4"/>
+
+    <line x1="720" y1="255"
+          x2="790" y2="255"
+          stroke="#0b4f71"
+          stroke-width="4"/>
+
+    <!-- flèche -->
+    <line x1="640" y1="145"
+          x2="640" y2="230"
+          stroke="#c0392b"
+          stroke-width="5"/>
+
+    <polygon points="630,220 650,220 640,240"
+             fill="#c0392b"/>
+
+    <!-- texte -->
+    <text x="300" y="105"
+          text-anchor="middle"
+          font-size="23"
+          fill="#0b4f71"
+          font-weight="bold">
+        Eau stockée en hauteur
+    </text>
+
+    <text x="640" y="65"
+          text-anchor="middle"
+          font-size="20"
+          fill="#1f2937">
+        Barrage
+    </text>
+
+    <text x="755" y="330"
+          text-anchor="middle"
+          font-size="18"
+          fill="#1f2937">
+        Turbine
+    </text>
+
+</svg>
+
+</div>
+
+
+<div class="question">
 
 <p>
-Observe cette situation réelle :
-</p>
-
-<img
-class="barrage"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Hoover_Dam_from_air.jpg/1280px-Hoover_Dam_from_air.jpg"
-alt="Barrage et réservoir d'eau">
-
-<p>
-Dans un barrage, une grande quantité d'eau est stockée en hauteur.
-Cette eau peut ensuite descendre et entraîner des turbines.
+Dans un barrage hydroélectrique, une grande quantité d'eau est
+stockée à une certaine hauteur. Lorsque l'eau est libérée,
+elle peut mettre en mouvement une turbine.
 </p>
 
 <p>
 <strong>
-Pourquoi une même quantité d'eau peut-elle être capable de produire
-davantage d'effet lorsqu'elle est située à une altitude plus élevée ?
+Comment peut-on caractériser l'état énergétique de l'eau
+avant sa descente et de quoi cette énergie dépend-elle ?
 </strong>
 </p>
 
-<div class="question">
-
 <p>
-<strong>Avant de commencer l'activité, propose ton idée :</strong>
+Propose ton hypothèse :
 </p>
 
-<textarea
-id="hypothese"
-style="width:100%;min-height:90px;padding:10px;border-radius:8px;border:1px solid #ccc;"
-placeholder="Écris ton idée ici..."></textarea>
+<textarea id="hypothese"
+placeholder="Écris ton hypothèse ici..."></textarea>
 
 </div>
 
 </section>
 
 
-
-<!-- OBJECTIF 1 -->
+<!-- ================================================= -->
+<!-- 3. OBJECTIFS -->
+<!-- ================================================= -->
 
 <section class="section">
 
-<h3>3. 🎯 Objectif 1 — Comprendre l'énergie potentielle de pesanteur</h3>
+<h3>3. 🎯 Objectifs du chapitre</h3>
 
 <div class="objectif">
 
-<strong>Objectif :</strong>
+<strong>Objectif 1</strong>
 
 <p>
-À la fin de cette activité, tu dois être capable de
-<strong>connaître et savoir exprimer l'énergie potentielle de pesanteur</strong>.
-</p>
-
-<p>
-Tu dois notamment comprendre :
-</p>
-
-<ul>
-
-<li>ce que représente cette énergie ;</li>
-
-<li>pourquoi elle dépend de la position du solide ;</li>
-
-<li>le rôle de la masse m ;</li>
-
-<li>le rôle de l'altitude z ;</li>
-
-<li>l'importance du choix d'un état de référence.</li>
-
-</ul>
-
-</div>
-
-
-
-<!-- ACTIVITE 1 -->
-
-<h3>🔬 Activité 1 — Pourquoi la hauteur compte-t-elle ?</h3>
-
-<p>
-On considère un livre de masse <strong>m</strong>.
-Une personne déplace le livre de la position A vers la position B.
-Le livre passe d'une table à une étagère.
-</p>
-
-
-
-<div class="schema">
-
-<div class="plan">
-
-<div class="table"></div>
-
-<div class="etagere"></div>
-
-<div class="sol"></div>
-
-<div class="livre livreA"></div>
-
-<div class="livre livreB"></div>
-
-<div class="pointA">A</div>
-
-<div class="pointB">B</div>
-
-</div>
-
-<p>
-<strong>Position A :</strong> hauteur z<sub>A</sub>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<strong>Position B :</strong> hauteur z<sub>B</sub>
+Connaître et savoir exprimer l'énergie potentielle de pesanteur.
 </p>
 
 </div>
 
 
+<div class="objectif">
 
-<div class="question">
+<strong>Objectif 2</strong>
 
 <p>
-<strong>1. Effectue le bilan des forces qui s'exercent sur le livre
-pendant son déplacement de A vers B.</strong>
+Connaître le lien entre le travail du poids et la variation
+de l'énergie potentielle de pesanteur.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- 4. ACTIVITE 1 -->
+<!-- ================================================= -->
+
+<section class="section">
+
+<h3>4. 🔬 Activité 1 — De quoi dépend l'énergie potentielle de pesanteur ?</h3>
+
+<div class="card">
+
+<p>
+On considère un objet que l'on peut déplacer verticalement.
+L'objectif est de rechercher expérimentalement comment son état
+énergétique dépend de sa position.
 </p>
 
 <p>
-Sélectionne toutes les forces présentes :
+Avant de calculer une énergie, observe les paramètres
+qui peuvent être modifiés :
 </p>
 
-<label>
-<input type="checkbox" id="forcePoids">
-Poids du livre
-</label>
-
-<br>
-
-<label>
-<input type="checkbox" id="forcePersonne">
-Force exercée par la personne
-</label>
-
-<br>
-
-<label>
-<input type="checkbox" id="forceFrottement">
-Force de frottement
-</label>
-
-<br>
-
-<button class="button" onclick="corrigerForces()">
-Vérifier le bilan des forces
-</button>
-
-<div id="resultatForces" class="resultat"></div>
+<span class="badge">masse m</span>
+<span class="badge">altitude z</span>
+<span class="badge">position de référence</span>
 
 </div>
 
 
+<div class="simulation-box">
 
-<!-- VALEURS -->
-
-<div class="question">
-
-<h3>2. 🧮 Données à manipuler</h3>
+<h4>🧪 Manipulation virtuelle</h4>
 
 <p>
-Modifie les valeurs et observe leur influence sur les calculs.
+Modifie la masse et la hauteur puis observe la représentation.
 </p>
+
 
 <div class="grid">
 
-<div class="valuebox">
+<div class="data-box">
 
-<label>Masse m (kg)</label><br>
+<strong>Masse m (kg)</strong>
 
-<input type="number" id="masse" value="2" min="0.1" step="0.1">
-
-</div>
-
-
-<div class="valuebox">
-
-<label>Altitude z<sub>A</sub> (m)</label><br>
-
-<input type="number" id="zA" value="1" step="0.1">
+<input
+type="number"
+id="masse"
+value="2"
+min="0.1"
+step="0.1"
+oninput="actualiserSimulation()">
 
 </div>
 
 
-<div class="valuebox">
+<div class="data-box">
 
-<label>Altitude z<sub>B</sub> (m)</label><br>
+<strong>Hauteur z (m)</strong>
 
-<input type="number" id="zB" value="3" step="0.1">
-
-</div>
-
-
-<div class="valuebox">
-
-<label>Vitesse v<sub>A</sub> (m/s)</label><br>
-
-<input type="number" id="vA" value="2" step="0.1">
+<input
+type="number"
+id="hauteur"
+value="3"
+min="0"
+step="0.5"
+oninput="actualiserSimulation()">
 
 </div>
 
 
-<div class="valuebox">
+<div class="data-box">
 
-<label>Vitesse v<sub>B</sub> (m/s)</label><br>
+<strong>Référence z<sub>0</sub> (m)</strong>
 
-<input type="number" id="vB" value="4" step="0.1">
-
-</div>
-
-</div>
-
-<p>
-On prendra :
-<strong>g = 10 N/kg</strong>.
-</p>
-
-<button class="button" onclick="calculerActivite1()">
-Calculer
-</button>
-
-<div id="calculsActivite1" class="resultat"></div>
+<input
+type="number"
+id="reference"
+value="0"
+step="0.5"
+oninput="actualiserSimulation()">
 
 </div>
 
-
-
-<!-- QUESTIONS DEMARCHE SCIENTIFIQUE -->
-
-<div class="question">
-
-<h3>3. 📊 Exploitation</h3>
-
-<p>
-À partir des valeurs obtenues, réponds aux questions suivantes.
-</p>
-
-
-<p>
-<strong>a.</strong>
-Quelle est la variation de l'énergie cinétique
-ΔE<sub>c</sub> entre A et B ?
-</p>
-
-<input type="number" id="repEc" step="0.1">
-<span> J</span>
-
-
-<p>
-<strong>b.</strong>
-Le travail du poids entre A et B vaut :
-</p>
-
-<input type="number" id="repTravailPoids" step="0.1">
-<span> J</span>
-
-
-<p>
-<strong>c.</strong>
-En appliquant le théorème de l'énergie cinétique,
-quel est le travail de la force exercée par la personne ?
-</p>
-
-<input type="number" id="repTravailPersonne" step="0.1">
-<span> J</span>
+</div>
 
 
 <br>
 
-<button class="button" onclick="corrigerActivite1()">
+<canvas id="canvasEnergie"
+width="900"
+height="400">
+</canvas>
+
+
+<div class="question">
+
+<p>
+<strong>Observation 1.</strong>
+Lorsque la hauteur de l'objet augmente, son énergie potentielle
+de pesanteur :
+</p>
+
+<select id="act1q1">
+
+<option value="">
+-- Choisir --
+</option>
+
+<option value="augmente">
+augmente
+</option>
+
+<option value="diminue">
+diminue
+</option>
+
+<option value="constante">
+reste constante
+</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<p>
+<strong>Observation 2.</strong>
+À hauteur identique, si la masse de l'objet augmente,
+son énergie potentielle de pesanteur :
+</p>
+
+<select id="act1q2">
+
+<option value="">
+-- Choisir --
+</option>
+
+<option value="augmente">
+augmente
+</option>
+
+<option value="diminue">
+diminue
+</option>
+
+<option value="constante">
+reste constante
+</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<p>
+<strong>Observation 3.</strong>
+L'énergie potentielle de pesanteur dépend donc principalement :
+</p>
+
+<select id="act1q3">
+
+<option value="">
+-- Choisir --
+</option>
+
+<option value="masse">
+de la masse et de la position du corps
+</option>
+
+<option value="vitesse">
+uniquement de la vitesse
+</option>
+
+<option value="temps">
+uniquement du temps
+</option>
+
+</select>
+
+</div>
+
+
+<button class="button"
+onclick="verifierActivite1()">
+
 Vérifier mes réponses
+
 </button>
 
-<div id="resultatActivite1" class="resultat"></div>
+
+<div id="resultatAct1"></div>
 
 </div>
 
+</section>
 
 
-<!-- CONSTRUCTION DE LA NOTION -->
+<!-- ================================================= -->
+<!-- 5. ETAT DE REFERENCE -->
+<!-- ================================================= -->
 
-<div class="question">
-
-<h3>4. 🧠 Construisons la nouvelle notion</h3>
-
-<p>
-Lors du déplacement du livre de A vers B, son altitude augmente.
-On associe à cette modification de position une nouvelle forme
-d'énergie appelée :
-</p>
-
-<p style="text-align:center;font-size:22px;font-weight:bold;">
-Énergie potentielle de pesanteur
-</p>
-
-<p>
-On la note :
-<strong>E<sub>pp</sub></strong>.
-</p>
-
-<p>
-Sa variation entre A et B est :
-</p>
-
-<div class="formule">
-
-ΔE<sub>pp</sub>
-=
-E<sub>pp</sub>(B) − E<sub>pp</sub>(A)
-
-</div>
-
-<p>
-Le lien avec le travail du poids est :
-</p>
-
-<div class="formule">
-
-ΔE<sub>pp</sub> = − W<sub>AB</sub>(P)
-
-</div>
-
-</div>
-
-
-
-<!-- ETAT DE REFERENCE -->
-
-<div class="question">
+<section class="section">
 
 <h3>5. 📍 L'état de référence</h3>
 
 <p>
-L'énergie potentielle de pesanteur dépend du choix d'une
-<strong>position de référence</strong>.
+Pour définir une énergie potentielle de pesanteur, il faut
+choisir une position de référence.
 </p>
+
+<div class="card">
 
 <p>
-On peut choisir une altitude z<sub>0</sub> pour laquelle :
+On choisit une position correspondant à :
 </p>
 
-<div class="formule">
+<div class="formula">
+z = z<sub>0</sub>
+</div>
 
-E<sub>pp</sub> = 0
+<p>
+À cette position, on peut prendre conventionnellement :
+</p>
+
+<div class="formula">
+E<sub>pp</sub>(z<sub>0</sub>) = 0
+</div>
+
+</div>
+
+
+<div class="question">
+
+<p>
+Si on change la position de référence, la valeur de l'énergie
+potentielle associée à une même position peut-elle changer ?
+</p>
+
+<select id="referenceQuestion">
+
+<option value="">
+-- Choisir --
+</option>
+
+<option value="oui">
+Oui, car l'énergie potentielle dépend du choix de la référence.
+</option>
+
+<option value="non">
+Non, elle ne dépend jamais de la référence.
+</option>
+
+</select>
+
+
+<button class="button"
+onclick="verifierReference()">
+
+Vérifier
+
+</button>
+
+
+<div id="resultatReference"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- 6. FORMULE -->
+<!-- ================================================= -->
+
+<section class="section">
+
+<h3>6. 🧠 Construction de l'expression</h3>
+
+<p>
+À proximité de la Terre, dans un champ de pesanteur uniforme,
+l'énergie potentielle de pesanteur d'un corps de masse m,
+situé à l'altitude z par rapport à une référence z<sub>0</sub>,
+s'écrit :
+</p>
+
+<div class="formula">
+
+E<sub>pp</sub>(z) − E<sub>pp</sub>(z<sub>0</sub>)
+=
+mg(z − z<sub>0</sub>)
 
 </div>
 
 <p>
-Si l'on choisit cette référence, l'expression de l'énergie
-potentielle de pesanteur devient :
+Avec le choix conventionnel
+E<sub>pp</sub>(z<sub>0</sub>) = 0 :
 </p>
 
-<div class="formule">
+<div class="formula">
 
 E<sub>pp</sub> = mg(z − z<sub>0</sub>)
 
 </div>
 
-
-<div class="question">
-
 <p>
-<strong>Question :</strong>
-Si on augmente l'altitude d'un objet sans changer sa masse,
-son énergie potentielle de pesanteur :
+Cette relation montre que l'énergie potentielle de pesanteur
+dépend de la masse, de l'intensité de la pesanteur et de
+la position par rapport à l'état de référence.
 </p>
-
-<select id="referenceQuestion">
-
-<option value="">-- Choisir --</option>
-
-<option value="augmente">augmente</option>
-
-<option value="diminue">diminue</option>
-
-<option value="constante">reste constante</option>
-
-</select>
-
-<br>
-
-<button class="button" onclick="corrigerReference()">
-Vérifier
-</button>
-
-<div id="resultatReference" class="resultat"></div>
-
-</div>
 
 </section>
 
 
-
-<!-- OBJECTIF 2 -->
+<!-- ================================================= -->
+<!-- 7. ACTIVITE 2 -->
+<!-- ================================================= -->
 
 <section class="section">
 
-<h3>4. 🎯 Objectif 2 — Relier travail du poids et variation d'énergie potentielle</h3>
+<h3>
+7. 🔬 Activité 2 — Travail du poids et variation de l'énergie potentielle
+</h3>
 
-<div class="objectif">
 
-<strong>Objectif :</strong>
+<div class="card">
+
+<h4>Situation étudiée</h4>
 
 <p>
-À la fin de cette activité, tu dois être capable de
-<strong>connaître le lien entre le travail du poids et la variation
-de l'énergie potentielle de pesanteur</strong>.
+Un solide de masse m glisse d'un point A vers un point B
+sur un plan incliné.
 </p>
+
+<p>
+On cherche à établir expérimentalement le lien entre :
+</p>
+
+<span class="badge">
+travail du poids
+</span>
+
+<span class="badge">
+variation de l'énergie potentielle
+</span>
+
+<span class="badge">
+variation de l'énergie cinétique
+</span>
 
 </div>
 
 
+<!-- Illustration plan incliné -->
 
-<h3>🔬 Activité 2 — Montée et descente</h3>
+<div class="card">
 
-<p>
-Un objet se déplace verticalement entre deux positions.
-Modifie les valeurs ci-dessous et observe le signe du travail
-du poids et celui de la variation de l'énergie potentielle.
-</p>
+<svg viewBox="0 0 900 430"
+width="100%"
+role="img"
+aria-label="Solide se déplaçant sur un plan incliné">
 
+    <!-- axe horizontal -->
+    <line x1="80" y1="350"
+          x2="820" y2="350"
+          stroke="#333"
+          stroke-width="3"/>
+
+    <polygon points="810,342 810,358 835,350"
+             fill="#333"/>
+
+    <text x="840" y="357"
+          font-size="18">
+        x
+    </text>
+
+    <!-- axe vertical -->
+    <line x1="120" y1="370"
+          x2="120" y2="70"
+          stroke="#333"
+          stroke-width="3"/>
+
+    <polygon points="112,80 128,80 120,55"
+             fill="#333"/>
+
+    <text x="105" y="48"
+          font-size="18">
+        z
+    </text>
+
+    <!-- plan -->
+    <line x1="180" y1="310"
+          x2="730" y2="150"
+          stroke="#0b4f71"
+          stroke-width="10"/>
+
+    <!-- point A -->
+    <circle cx="300" cy="275"
+            r="9"
+            fill="#0b4f71"/>
+
+    <text x="285" y="300"
+          font-size="20"
+          font-weight="bold">
+        A
+    </text>
+
+    <!-- point B -->
+    <circle cx="610" cy="185"
+            r="9"
+            fill="#0b4f71"/>
+
+    <text x="620" y="180"
+          font-size="20"
+          font-weight="bold">
+        B
+    </text>
+
+    <!-- objet -->
+    <rect x="285" y="245"
+          width="40"
+          height="30"
+          rx="5"
+          fill="#64748b"/>
+
+    <!-- déplacement -->
+    <line x1="335" y1="260"
+          x2="560" y2="195"
+          stroke="#c0392b"
+          stroke-width="4"/>
+
+    <polygon points="550,188 565,194 552,203"
+             fill="#c0392b"/>
+
+    <text x="440" y="220"
+          font-size="18"
+          fill="#c0392b">
+        déplacement
+    </text>
+
+    <!-- poids -->
+    <line x1="305" y1="275"
+          x2="305" y2="350"
+          stroke="#111827"
+          stroke-width="4"/>
+
+    <polygon points="298,340 312,340 305,355"
+             fill="#111827"/>
+
+    <text x="320" y="330"
+          font-size="18">
+        P
+    </text>
+
+    <!-- réaction -->
+    <line x1="325" y1="255"
+          x2="360" y2="350"
+          stroke="#64748b"
+          stroke-width="3"/>
+
+    <text x="365" y="345"
+          font-size="17">
+        R
+    </text>
+
+</svg>
+
+</div>
 
 
 <div class="question">
 
-<div class="grid">
+<h4>Étape 1 — Bilan des forces</h4>
 
-<div class="valuebox">
+<p>
+Le solide est soumis aux forces suivantes.
+Sélectionne les forces réellement appliquées au solide.
+</p>
 
-<label>m (kg)</label><br>
 
-<input type="number" id="m2" value="5" step="0.5">
-
-</div>
-
-<div class="valuebox">
-
-<label>z<sub>A</sub> (m)</label><br>
-
-<input type="number" id="za2" value="2" step="0.5">
-
-</div>
-
-<div class="valuebox">
-
-<label>z<sub>B</sub> (m)</label><br>
-
-<input type="number" id="zb2" value="6" step="0.5">
-
-</div>
-
-</div>
+<label>
+<input type="checkbox"
+id="forcePoids">
+Poids P
+</label>
 
 <br>
 
-<button class="button" onclick="calculerActivite2()">
-Lancer l'expérience
-</button>
+<label>
+<input type="checkbox"
+id="forceReaction">
+Réaction du plan R
+</label>
 
-<div id="resultatActivite2" class="resultat"></div>
+<br>
+
+<label>
+<input type="checkbox"
+id="forceMotrice">
+Force motrice exercée par une personne
+</label>
+
+<br>
+
+<label>
+<input type="checkbox"
+id="forceFrottement">
+Force de frottement
+</label>
 
 </div>
 
 
+<div class="question">
+
+<h4>
+Étape 2 — Données expérimentales
+</h4>
+
+<p>
+On étudie le mouvement d'un solide sur le plan incliné.
+Les valeurs peuvent être modifiées pour refaire l'exploitation.
+</p>
+
+
+<div class="grid">
+
+<div class="data-box">
+
+<strong>m (kg)</strong>
+
+<input
+type="number"
+id="m2"
+value="2"
+step="0.1"
+oninput="calculerActivite2()">
+
+</div>
+
+
+<div class="data-box">
+
+<strong>g (N/kg)</strong>
+
+<input
+type="number"
+id="g2"
+value="10"
+step="0.1"
+oninput="calculerActivite2()">
+
+</div>
+
+
+<div class="data-box">
+
+<strong>z<sub>A</sub> (m)</strong>
+
+<input
+type="number"
+id="zA"
+value="3"
+step="0.1"
+oninput="calculerActivite2()">
+
+</div>
+
+
+<div class="data-box">
+
+<strong>z<sub>B</sub> (m)</strong>
+
+<input
+type="number"
+id="zB"
+value="1"
+step="0.1"
+oninput="calculerActivite2()">
+
+</div>
+
+
+<div class="data-box">
+
+<strong>v<sub>A</sub> (m/s)</strong>
+
+<input
+type="number"
+id="vA"
+value="0"
+step="0.1"
+oninput="calculerActivite2()">
+
+</div>
+
+
+<div class="data-box">
+
+<strong>v<sub>B</sub> (m/s)</strong>
+
+<input
+type="number"
+id="vB"
+value="6"
+step="0.1"
+oninput="calculerActivite2()">
+
+</div>
+
+</div>
+
+
+<div class="success">
+
+<p>
+<strong>Résultats calculés :</strong>
+</p>
+
+<p>
+Variation d'énergie cinétique :
+<span id="deltaEc">—</span> J
+</p>
+
+<p>
+Travail du poids :
+<span id="travailPoids">—</span> J
+</p>
+
+<p>
+Variation de l'énergie potentielle :
+<span id="deltaEpp">—</span> J
+</p>
+
+</div>
+
+</div>
+
 
 <div class="question">
 
+<h4>
+Étape 3 — Exploitation
+</h4>
+
+
 <p>
 <strong>Question 1.</strong>
-Lorsque l'objet monte de A vers B, le travail du poids est :
+Le travail du poids entre A et B vaut :
 </p>
 
-<select id="qAct2">
+<select id="act2q1">
 
-<option value="">-- Choisir --</option>
+<option value="">
+-- Choisir --
+</option>
 
-<option value="positif">positif</option>
+<option value="a">
+W<sub>AB</sub>(P) = mg(z<sub>B</sub> − z<sub>A</sub>)
+</option>
 
-<option value="negatif">négatif</option>
+<option value="b">
+W<sub>AB</sub>(P) = mg(z<sub>A</sub> − z<sub>B</sub>)
+</option>
 
-<option value="nul">nul</option>
+<option value="c">
+W<sub>AB</sub>(P) = mg(z<sub>A</sub> + z<sub>B</sub>)
+</option>
 
 </select>
 
 
 <p>
 <strong>Question 2.</strong>
-Lorsque l'objet monte, l'énergie potentielle de pesanteur :
+D'après le théorème de l'énergie cinétique :
 </p>
 
-<select id="qAct22">
+<select id="act2q2">
 
-<option value="">-- Choisir --</option>
+<option value="">
+-- Choisir --
+</option>
 
-<option value="augmente">augmente</option>
+<option value="a">
+ΔEc = ΣW(F)
+</option>
 
-<option value="diminue">diminue</option>
+<option value="b">
+ΔEc = 0 dans tous les cas
+</option>
 
-<option value="constante">reste constante</option>
+<option value="c">
+ΔEc = Epp
+</option>
 
 </select>
 
 
 <p>
 <strong>Question 3.</strong>
-Quelle relation relie le travail du poids à la variation
-de l'énergie potentielle de pesanteur ?
+Pour le mouvement étudié sans frottement, la variation
+de l'énergie potentielle de pesanteur est :
 </p>
 
-<select id="qAct23">
+<select id="act2q3">
 
-<option value="">-- Choisir --</option>
+<option value="">
+-- Choisir --
+</option>
 
 <option value="a">
-ΔE<sub>pp</sub> = W(P)
+ΔEpp = Epp(B) − Epp(A)
 </option>
 
 <option value="b">
-ΔE<sub>pp</sub> = −W(P)
+ΔEpp = Epp(A) + Epp(B)
 </option>
 
 <option value="c">
-ΔE<sub>pp</sub> = W(P)²
+ΔEpp = Epp(A) − Epp(B)
 </option>
 
 </select>
 
 
-<button class="button" onclick="corrigerActivite2()">
-Vérifier mes réponses
+<p>
+<strong>Question 4.</strong>
+Le lien entre le travail du poids et la variation
+de l'énergie potentielle de pesanteur est :
+</p>
+
+<select id="act2q4">
+
+<option value="">
+-- Choisir --
+</option>
+
+<option value="a">
+W<sub>AB</sub>(P) = ΔEpp
+</option>
+
+<option value="b">
+W<sub>AB</sub>(P) = −ΔEpp
+</option>
+
+<option value="c">
+W<sub>AB</sub>(P) = ΔEc
+</option>
+
+</select>
+
+
+<button class="button"
+onclick="verifierActivite2()">
+
+Vérifier mon exploitation
+
 </button>
 
-<div id="correctionAct2" class="resultat"></div>
+
+<div id="resultatAct2"></div>
 
 </div>
 
+</section>
 
 
-<!-- BILAN -->
+<!-- ================================================= -->
+<!-- 8. BILAN -->
+<!-- ================================================= -->
 
 <section class="section">
 
-<h3>5. 🧠 Bilan du chapitre</h3>
+<h3>8. 🧠 Bilan du chapitre</h3>
+
+<div class="card">
 
 <p>
-Complète mentalement les idées essentielles :
+L'énergie potentielle de pesanteur est une énergie associée
+à l'interaction entre un corps et la Terre.
 </p>
 
-<ul>
+<p>
+Dans le voisinage de la Terre :
+</p>
 
-<li>
-L'énergie potentielle de pesanteur est liée à la
-<strong>position</strong> d'un objet dans le champ de pesanteur.
-</li>
-
-<li>
-Elle dépend notamment de la <strong>masse</strong> et de
-l'<strong>altitude</strong>.
-</li>
-
-<li>
-Son expression dépend du choix d'un
-<strong>état de référence</strong>.
-</li>
-
-<li>
-Avec une altitude de référence z<sub>0</sub> :
-</li>
-
-</ul>
-
-<div class="formule">
+<div class="formula">
 
 E<sub>pp</sub> = mg(z − z<sub>0</sub>)
 
 </div>
 
 <p>
-Entre deux positions A et B :
+avec un choix donné de l'état de référence.
 </p>
 
-<div class="formule">
+<p>
+La variation de l'énergie potentielle est liée au travail
+du poids par :
+</p>
 
-ΔE<sub>pp</sub> = −W<sub>AB</sub>(P)
+<div class="formula">
+
+W<sub>AB</sub>(P) = −ΔE<sub>pp</sub>
+
+</div>
+
+<p>
+Ainsi, lorsque le corps descend, son énergie potentielle
+diminue tandis que le travail du poids est positif.
+</p>
 
 </div>
 
 </section>
 
 
-
-<!-- EVALUATION -->
+<!-- ================================================= -->
+<!-- 9. EXERCICE -->
+<!-- ================================================= -->
 
 <section class="section">
 
-<h3>6. ✅ Je me teste</h3>
+<h3>9. 📝 Application</h3>
 
 <p>
-Un objet de masse 2 kg passe d'une altitude de 1 m à une altitude
-de 4 m. On prend g = 10 N/kg et z<sub>0</sub> = 0.
+Un objet de masse 2 kg est situé à une hauteur de 5 m.
+On prend g = 10 N/kg et le niveau de référence à z<sub>0</sub> = 0.
 </p>
+
+<div class="question">
 
 <p>
-Quelle est sa variation d'énergie potentielle de pesanteur ?
+Quelle est son énergie potentielle de pesanteur ?
 </p>
 
-<select id="evaluation">
+<input
+type="number"
+id="exo1"
+placeholder="Réponse en joules">
 
-<option value="">-- Choisir --</option>
+<button class="button"
+onclick="verifierExercice()">
 
-<option value="20">20 J</option>
-
-<option value="40">40 J</option>
-
-<option value="60">60 J</option>
-
-<option value="80">80 J</option>
-
-</select>
-
-<br>
-
-<button class="button" onclick="corrigerEvaluation()">
 Vérifier
+
 </button>
 
-<div id="resultatEvaluation" class="resultat"></div>
+<div id="resultatExercice"></div>
+
+</div>
 
 </section>
 
 
+<!-- ================================================= -->
+<!-- 10. FUTUR IA -->
+<!-- ================================================= -->
+
+<section class="section">
+
+<h3>🤖 Assistant IA pédagogique</h3>
+
+<p>
+Cette partie sera développée ensuite pour permettre à l'enseignant
+de générer automatiquement de nouvelles activités, exercices,
+situations-problèmes ou activités de remédiation à partir
+des objectifs du chapitre.
+</p>
+
+<div class="card">
+
+<p>
+<strong>Exemple :</strong>
+</p>
+
+<p>
+« Générer une activité permettant de faire découvrir
+l'énergie potentielle de pesanteur à partir d'une situation
+de la vie quotidienne. »
+</p>
+
+<p>
+L'enseignant pourra ensuite modifier, valider ou régénérer
+la proposition.
+</p>
 
 </div>
 
+</section>
+
+
+</div>
 
 
 <footer>
@@ -1056,294 +1463,511 @@ ENERGIE-LAB — Prototype pédagogique
 </footer>
 
 
-
 <script>
 
 
+/* ================================================= */
 /* PREREQUIS */
+/* ================================================= */
 
-function corrigerPrerequis(){
+function verifierPrerequis() {
 
-    let erreurs=[];
+    let erreurs = [];
 
-    if(document.getElementById("pre1").value !== "a")
-        erreurs.push("Question 1 : rappelle-toi l'expression du travail d'une force constante.");
+    if (document.getElementById("pre1").value !== "b") {
+        erreurs.push("Question 1");
+    }
 
-    if(document.getElementById("pre2").value !== "b")
-        erreurs.push("Question 2 : rappelle-toi la formule de l'énergie cinétique.");
+    if (document.getElementById("pre2").value !== "b") {
+        erreurs.push("Question 2");
+    }
 
-    if(document.getElementById("pre3").value !== "a")
-        erreurs.push("Question 3 : le théorème de l'énergie cinétique relie ΔEc à la somme des travaux des forces.");
+    if (document.getElementById("pre3").value !== "c") {
+        erreurs.push("Question 3");
+    }
 
-    let r=document.getElementById("resultatPrerequis");
+    if (document.getElementById("pre4").value !== "a") {
+        erreurs.push("Question 4");
+    }
 
-    r.style.display="block";
+    let resultat =
+        document.getElementById("resultatPrerequis");
 
-    if(erreurs.length===0){
+    if (erreurs.length === 0) {
 
-        r.className="resultat correct";
+        resultat.className = "success";
 
-        r.innerHTML="✅ Très bien ! Tes trois prérequis sont maîtrisés.";
+        resultat.innerHTML =
+        "✅ Très bien ! Toutes tes réponses sont correctes.";
 
-    }else{
+    } else {
 
-        r.className="resultat incorrect";
+        resultat.className = "error";
 
-        r.innerHTML="<strong>🔎 À revoir :</strong><br><br>"+erreurs.join("<br><br>");
+        resultat.innerHTML =
+        "❌ Certaines réponses sont incorrectes.<br><br>" +
+        "<strong>Questions à revoir :</strong> " +
+        erreurs.join(", ") +
+        ".<br><br>" +
+        "Relis les notions correspondantes avant de poursuivre.";
 
     }
 
 }
 
 
-/* BILAN DES FORCES */
+/* ================================================= */
+/* SIMULATION ACTIVITE 1 */
+/* ================================================= */
 
-function corrigerForces(){
+function actualiserSimulation() {
 
-    let poids=document.getElementById("forcePoids").checked;
-    let personne=document.getElementById("forcePersonne").checked;
-    let frottement=document.getElementById("forceFrottement").checked;
+    let canvas =
+        document.getElementById("canvasEnergie");
 
-    let r=document.getElementById("resultatForces");
+    let ctx =
+        canvas.getContext("2d");
 
-    r.style.display="block";
+    let m =
+        parseFloat(document.getElementById("masse").value) || 0;
 
-    if(poids && personne && !frottement){
+    let z =
+        parseFloat(document.getElementById("hauteur").value) || 0;
 
-        r.className="resultat correct";
+    let z0 =
+        parseFloat(document.getElementById("reference").value) || 0;
 
-        r.innerHTML=
-        "✅ Correct ! Dans le modèle étudié, le livre est soumis à son poids P et à la force exercée par la personne. Les frottements sont négligés.";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    }else{
 
-        r.className="resultat incorrect";
+    /* sol */
 
-        r.innerHTML=
-        "❌ Ton bilan n'est pas correct. Pour cette situation, on considère le poids du livre et la force exercée par la personne. Les frottements sont négligés.";
+    ctx.beginPath();
+
+    ctx.moveTo(80, 330);
+    ctx.lineTo(820, 330);
+
+    ctx.strokeStyle = "#555";
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+
+
+    /* axe vertical */
+
+    ctx.beginPath();
+
+    ctx.moveTo(120, 340);
+    ctx.lineTo(120, 50);
+
+    ctx.strokeStyle = "#333";
+    ctx.lineWidth = 2;
+
+    ctx.stroke();
+
+
+    /* flèche axe */
+
+    ctx.beginPath();
+
+    ctx.moveTo(120, 50);
+    ctx.lineTo(113, 65);
+    ctx.moveTo(120, 50);
+    ctx.lineTo(127, 65);
+
+    ctx.stroke();
+
+
+    /* hauteur */
+
+    let hauteurGraphique =
+        Math.min(230, z * 45);
+
+    let y =
+        330 - hauteurGraphique;
+
+
+    /* objet */
+
+    ctx.fillStyle = "#0b4f71";
+
+    ctx.fillRect(
+        450,
+        y - 25,
+        55,
+        40
+    );
+
+
+    /* ligne hauteur */
+
+    ctx.setLineDash([6,6]);
+
+    ctx.beginPath();
+
+    ctx.moveTo(450, y);
+    ctx.lineTo(120, y);
+
+    ctx.strokeStyle = "#c0392b";
+
+    ctx.stroke();
+
+    ctx.setLineDash([]);
+
+
+    /* texte */
+
+    ctx.fillStyle = "#1f2937";
+
+    ctx.font = "18px Arial";
+
+    ctx.fillText(
+        "z = " + z + " m",
+        180,
+        y - 10
+    );
+
+    ctx.fillText(
+        "m = " + m + " kg",
+        520,
+        y
+    );
+
+
+    let E =
+        m * 10 * (z - z0);
+
+
+    ctx.font = "bold 19px Arial";
+
+    ctx.fillText(
+        "Epp = " + E.toFixed(1) + " J",
+        360,
+        380
+    );
+
+}
+
+
+actualiserSimulation();
+
+
+/* ================================================= */
+/* ACTIVITE 1 */
+/* ================================================= */
+
+function verifierActivite1() {
+
+    let erreurs = [];
+
+    if (
+        document.getElementById("act1q1").value !==
+        "augmente"
+    ) {
+        erreurs.push("Question 1");
+    }
+
+    if (
+        document.getElementById("act1q2").value !==
+        "augmente"
+    ) {
+        erreurs.push("Question 2");
+    }
+
+    if (
+        document.getElementById("act1q3").value !==
+        "masse"
+    ) {
+        erreurs.push("Question 3");
+    }
+
+
+    let resultat =
+        document.getElementById("resultatAct1");
+
+
+    if (erreurs.length === 0) {
+
+        resultat.className = "success";
+
+        resultat.innerHTML =
+        "✅ Très bien !<br><br>" +
+        "Tu as identifié les deux paramètres essentiels : " +
+        "la masse du corps et sa position par rapport " +
+        "à l'état de référence.";
+
+    } else {
+
+        resultat.className = "error";
+
+        resultat.innerHTML =
+        "❌ Il y a une erreur.<br><br>" +
+        "<strong>Question(s) à revoir :</strong> " +
+        erreurs.join(", ") +
+        ".<br><br>" +
+        "Modifie tes réponses puis vérifie à nouveau.";
 
     }
 
 }
 
 
-/* CALCULS ACTIVITE 1 */
-
-function calculerActivite1(){
-
-    let m=parseFloat(document.getElementById("masse").value);
-    let zA=parseFloat(document.getElementById("zA").value);
-    let zB=parseFloat(document.getElementById("zB").value);
-    let vA=parseFloat(document.getElementById("vA").value);
-    let vB=parseFloat(document.getElementById("vB").value);
-
-    let g=10;
-
-    let EcA=0.5*m*vA*vA;
-    let EcB=0.5*m*vB*vB;
-
-    let deltaEc=EcB-EcA;
-
-    let travailPoids=m*g*(zA-zB);
-
-    let travailPersonne=deltaEc-travailPoids;
-
-    let r=document.getElementById("calculsActivite1");
-
-    r.style.display="block";
-    r.className="resultat correct";
-
-    r.innerHTML=
-    "<strong>Résultats :</strong><br><br>"+
-    "E<sub>c</sub>(A) = "+EcA.toFixed(2)+" J<br>"+
-    "E<sub>c</sub>(B) = "+EcB.toFixed(2)+" J<br>"+
-    "ΔE<sub>c</sub> = "+deltaEc.toFixed(2)+" J<br>"+
-    "W<sub>AB</sub>(P) = "+travailPoids.toFixed(2)+" J<br>"+
-    "W<sub>AB</sub>(F) = "+travailPersonne.toFixed(2)+" J";
-
-}
-
-
-/* CORRECTION ACTIVITE 1 */
-
-function corrigerActivite1(){
-
-    let m=parseFloat(document.getElementById("masse").value);
-    let zA=parseFloat(document.getElementById("zA").value);
-    let zB=parseFloat(document.getElementById("zB").value);
-    let vA=parseFloat(document.getElementById("vA").value);
-    let vB=parseFloat(document.getElementById("vB").value);
-
-    let g=10;
-
-    let EcA=0.5*m*vA*vA;
-    let EcB=0.5*m*vB*vB;
-
-    let deltaEc=EcB-EcA;
-
-    let travailPoids=m*g*(zA-zB);
-
-    let travailPersonne=deltaEc-travailPoids;
-
-    let repEc=parseFloat(document.getElementById("repEc").value);
-    let repPoids=parseFloat(document.getElementById("repTravailPoids").value);
-    let repPersonne=parseFloat(document.getElementById("repTravailPersonne").value);
-
-    let erreurs=[];
-
-    if(Math.abs(repEc-deltaEc)>0.1)
-        erreurs.push("a. La variation de l'énergie cinétique est incorrecte.");
-
-    if(Math.abs(repPoids-travailPoids)>0.1)
-        erreurs.push("b. Le travail du poids est incorrect. Utilise W<sub>AB</sub>(P)=mg(z<sub>A</sub>−z<sub>B</sub>).");
-
-    if(Math.abs(repPersonne-travailPersonne)>0.1)
-        erreurs.push("c. Le travail de la force exercée par la personne est incorrect. Utilise le théorème de l'énergie cinétique.");
-
-    let r=document.getElementById("resultatActivite1");
-
-    r.style.display="block";
-
-    if(erreurs.length===0){
-
-        r.className="resultat correct";
-
-        r.innerHTML=
-        "🎉 Excellent ! Toutes tes réponses sont correctes.<br><br>"+
-        "Tu peux maintenant établir le lien entre le travail du poids et la variation de l'énergie potentielle de pesanteur.";
-
-    }else{
-
-        r.className="resultat incorrect";
-
-        r.innerHTML=
-        "<strong>🔎 Voici précisément ce qui doit être revu :</strong><br><br>"+
-        erreurs.join("<br><br>");
-
-    }
-
-}
-
-
+/* ================================================= */
 /* REFERENCE */
+/* ================================================= */
 
-function corrigerReference(){
+function verifierReference() {
 
-    let rep=document.getElementById("referenceQuestion").value;
+    let valeur =
+        document.getElementById("referenceQuestion").value;
 
-    let r=document.getElementById("resultatReference");
-
-    r.style.display="block";
-
-    if(rep==="augmente"){
-
-        r.className="resultat correct";
-
-        r.innerHTML=
-        "✅ Correct. À masse constante, lorsque l'altitude augmente, l'énergie potentielle de pesanteur augmente.";
-
-    }else{
-
-        r.className="resultat incorrect";
-
-        r.innerHTML=
-        "❌ Revois l'influence de l'altitude : à masse constante, une augmentation de z entraîne une augmentation de E<sub>pp</sub>.";
-
-    }
-
-}
+    let resultat =
+        document.getElementById("resultatReference");
 
 
-/* ACTIVITE 2 */
+    if (valeur === "oui") {
 
-function calculerActivite2(){
+        resultat.className = "success";
 
-    let m=parseFloat(document.getElementById("m2").value);
-    let za=parseFloat(document.getElementById("za2").value);
-    let zb=parseFloat(document.getElementById("zb2").value);
+        resultat.innerHTML =
+        "✅ Correct. La valeur de l'énergie potentielle " +
+        "est définie par rapport à un état de référence.";
 
-    let g=10;
+    } else {
 
-    let travail=m*g*(za-zb);
+        resultat.className = "error";
 
-    let deltaEpp=m*g*(zb-za);
-
-    let r=document.getElementById("resultatActivite2");
-
-    r.style.display="block";
-    r.className="resultat correct";
-
-    r.innerHTML=
-    "<strong>Résultats de l'expérience :</strong><br><br>"+
-    "W<sub>AB</sub>(P) = "+travail.toFixed(2)+" J<br>"+
-    "ΔE<sub>pp</sub> = "+deltaEpp.toFixed(2)+" J<br><br>"+
-    "Observe que ΔE<sub>pp</sub> = −W<sub>AB</sub>(P).";
-
-}
-
-
-/* CORRECTION ACTIVITE 2 */
-
-function corrigerActivite2(){
-
-    let erreurs=[];
-
-    if(document.getElementById("qAct2").value!=="negatif")
-        erreurs.push("Question 1 : lors d'une montée, le poids est opposé au déplacement. Son travail est donc négatif.");
-
-    if(document.getElementById("qAct22").value!=="augmente")
-        erreurs.push("Question 2 : lorsque l'altitude augmente, l'énergie potentielle de pesanteur augmente.");
-
-    if(document.getElementById("qAct23").value!=="b")
-        erreurs.push("Question 3 : la relation correcte est ΔEpp = −W(P).");
-
-    let r=document.getElementById("correctionAct2");
-
-    r.style.display="block";
-
-    if(erreurs.length===0){
-
-        r.className="resultat correct";
-
-        r.innerHTML=
-        "✅ Très bien ! Tu as établi le lien entre le travail du poids et la variation de l'énergie potentielle de pesanteur.";
-
-    }else{
-
-        r.className="resultat incorrect";
-
-        r.innerHTML=
-        "<strong>🔎 Questions à revoir :</strong><br><br>"+
-        erreurs.join("<br><br>");
+        resultat.innerHTML =
+        "❌ Revois la notion d'état de référence.";
 
     }
 
 }
 
 
-/* EVALUATION */
+/* ================================================= */
+/* ACTIVITE 2 — CALCULS */
+/* ================================================= */
 
-function corrigerEvaluation(){
+function calculerActivite2() {
 
-    let rep=document.getElementById("evaluation").value;
+    let m =
+        parseFloat(document.getElementById("m2").value) || 0;
 
-    let r=document.getElementById("resultatEvaluation");
+    let g =
+        parseFloat(document.getElementById("g2").value) || 0;
 
-    r.style.display="block";
+    let zA =
+        parseFloat(document.getElementById("zA").value) || 0;
 
-    if(rep==="60"){
+    let zB =
+        parseFloat(document.getElementById("zB").value) || 0;
 
-        r.className="resultat correct";
+    let vA =
+        parseFloat(document.getElementById("vA").value) || 0;
 
-        r.innerHTML=
-        "✅ Correct ! ΔE<sub>pp</sub> = mg(z<sub>B</sub>−z<sub>A</sub>) = 2 × 10 × (4−1) = 60 J.";
+    let vB =
+        parseFloat(document.getElementById("vB").value) || 0;
 
-    }else{
 
-        r.className="resultat incorrect";
+    let EcA =
+        0.5 * m * vA * vA;
 
-        r.innerHTML=
-        "❌ Recommence. Utilise la relation ΔE<sub>pp</sub> = mg(z<sub>B</sub>−z<sub>A</sub>).";
+    let EcB =
+        0.5 * m * vB * vB;
+
+    let deltaEc =
+        EcB - EcA;
+
+
+    let travailPoids =
+        m * g * (zA - zB);
+
+
+    let deltaEpp =
+        m * g * (zB - zA);
+
+
+    document.getElementById("deltaEc")
+        .innerHTML =
+        deltaEc.toFixed(2);
+
+    document.getElementById("travailPoids")
+        .innerHTML =
+        travailPoids.toFixed(2);
+
+    document.getElementById("deltaEpp")
+        .innerHTML =
+        deltaEpp.toFixed(2);
+
+}
+
+
+calculerActivite2();
+
+
+/* ================================================= */
+/* ACTIVITE 2 — CORRECTION */
+/* ================================================= */
+
+function verifierActivite2() {
+
+    let erreurs = [];
+
+
+    /* Question 1 */
+
+    if (
+        document.getElementById("act2q1").value !== "b"
+    ) {
+
+        erreurs.push("Question 1");
+
+    }
+
+
+    /* Question 2 */
+
+    if (
+        document.getElementById("act2q2").value !== "a"
+    ) {
+
+        erreurs.push("Question 2");
+
+    }
+
+
+    /* Question 3 */
+
+    if (
+        document.getElementById("act2q3").value !== "a"
+    ) {
+
+        erreurs.push("Question 3");
+
+    }
+
+
+    /* Question 4 */
+
+    if (
+        document.getElementById("act2q4").value !== "b"
+    ) {
+
+        erreurs.push("Question 4");
+
+    }
+
+
+    /* bilan des forces */
+
+    let poids =
+        document.getElementById("forcePoids").checked;
+
+    let reaction =
+        document.getElementById("forceReaction").checked;
+
+    let motrice =
+        document.getElementById("forceMotrice").checked;
+
+    let frottement =
+        document.getElementById("forceFrottement").checked;
+
+
+    if (!poids) {
+        erreurs.push("Bilan des forces : poids");
+    }
+
+    if (!reaction) {
+        erreurs.push("Bilan des forces : réaction du plan");
+    }
+
+    if (motrice) {
+        erreurs.push("Bilan des forces : force motrice");
+    }
+
+    if (frottement) {
+        erreurs.push("Bilan des forces : frottement");
+    }
+
+
+    let resultat =
+        document.getElementById("resultatAct2");
+
+
+    if (erreurs.length === 0) {
+
+        resultat.className = "success";
+
+        resultat.innerHTML =
+        "✅ Excellent !<br><br>" +
+
+        "Le bilan des forces est correct et ton exploitation " +
+        "permet d'obtenir :<br><br>" +
+
+        "<strong>" +
+        "W<sub>AB</sub>(P) = −ΔE<sub>pp</sub>" +
+        "</strong>" +
+
+        "<br><br>" +
+
+        "Tu as établi le lien entre le travail du poids " +
+        "et la variation de l'énergie potentielle de pesanteur.";
+
+    } else {
+
+        resultat.className = "error";
+
+        resultat.innerHTML =
+        "❌ Certaines réponses doivent être corrigées.<br><br>" +
+
+        "<strong>Éléments à revoir :</strong><br>" +
+
+        erreurs.join("<br>") +
+
+        "<br><br>" +
+
+        "Corrige uniquement les éléments indiqués puis " +
+        "clique à nouveau sur « Vérifier ».";
+
+    }
+
+}
+
+
+/* ================================================= */
+/* EXERCICE */
+/* ================================================= */
+
+function verifierExercice() {
+
+    let valeur =
+        parseFloat(
+            document.getElementById("exo1").value
+        );
+
+
+    let resultat =
+        document.getElementById("resultatExercice");
+
+
+    if (Math.abs(valeur - 100) < 0.01) {
+
+        resultat.className = "success";
+
+        resultat.innerHTML =
+        "✅ Correct !<br><br>" +
+        "E<sub>pp</sub> = mg(z − z<sub>0</sub>)<br>" +
+        "= 2 × 10 × 5<br>" +
+        "= <strong>100 J</strong>";
+
+    } else {
+
+        resultat.className = "error";
+
+        resultat.innerHTML =
+        "❌ Ce n'est pas la bonne valeur.<br><br>" +
+        "Utilise : E<sub>pp</sub> = mg(z − z<sub>0</sub>).";
 
     }
 
@@ -1353,4 +1977,5 @@ function corrigerEvaluation(){
 
 
 </body>
+
 </html>
