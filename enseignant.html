@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Espace Enseignant - ENERGIE-LAB</title>
+    <title>ENERGIE-LAB — Espace Enseignant</title>
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f8fc;
+            background: #f4f7fb;
             color: #1f2937;
         }
 
         header {
             background: #0b4f71;
             color: white;
-            padding: 20px 8%;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -25,7 +32,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 26px;
+            font-size: 24px;
         }
 
         header a {
@@ -34,63 +41,145 @@
         }
 
         .hero {
+            background: white;
+            padding: 55px 20px;
             text-align: center;
-            padding: 55px 20px 35px;
         }
 
         .hero h2 {
             color: #0b4f71;
             font-size: 34px;
+            margin-bottom: 15px;
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
             line-height: 1.7;
+            color: #555;
         }
 
-        .modules {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            padding: 30px 20px 70px;
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        }
+
+        .section h3 {
+            color: #0b4f71;
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            background: white;
-            width: 260px;
-            padding: 28px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            background: #f7f9fc;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
         }
 
         .icon {
-            font-size: 45px;
+            font-size: 35px;
+            margin-bottom: 10px;
         }
 
-        .card h3 {
+        .card h4 {
             color: #0b4f71;
+            margin-bottom: 10px;
         }
 
-        .card p {
-            line-height: 1.5;
+        select,
+        textarea,
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 12px;
-            padding: 10px 20px;
+            padding: 13px 22px;
             background: #0b4f71;
             color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
             text-decoration: none;
-            border-radius: 7px;
         }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .ai-button {
+            background: #6b4eff;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .ai-result {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            background: #f1efff;
+            border-left: 5px solid #6b4eff;
+            border-radius: 10px;
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8f2f7;
+            color: #0b4f71;
+            padding: 6px 10px;
+            border-radius: 20px;
+            margin: 4px;
+            font-size: 13px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
     </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -103,110 +192,398 @@
 
 <section class="hero">
 
-    <h2>👨‍🏫 Espace Enseignant</h2>
+    <h2>👩‍🏫 Espace Enseignant</h2>
 
     <p>
-        Bienvenue dans votre espace pédagogique.
-        Explorez les simulations, préparez des activités et accompagnez
-        vos élèves dans l'apprentissage du concept d'énergie.
+        Une plateforme numérique pour préparer, adapter et enrichir
+        l'enseignement de la physique grâce aux simulations,
+        aux ressources pédagogiques et à l'intelligence artificielle.
     </p>
 
 </section>
 
 
-<section class="modules">
+<div class="container">
 
 
-    <div class="card">
+<!-- PARCOURS -->
 
-        <div class="icon">🔬</div>
+<section class="section">
 
-        <h3>Explorer les simulations</h3>
+    <h3>📚 1. Sélectionner le contexte d'enseignement</h3>
 
-        <p>
-            Explorez et manipulez des simulations liées aux phénomènes
-            énergétiques.
-        </p>
+    <label>Niveau</label>
 
-        <a class="button" href="#">
-            Explorer
-        </a>
+    <select id="niveau">
 
-    </div>
+        <option value="">-- Choisir le niveau --</option>
 
+        <option>1ère année Bac</option>
 
-    <div class="card">
+        <option>2ème année Bac</option>
 
-        <div class="icon">🧪</div>
-
-        <h3>Activités pédagogiques</h3>
-
-        <p>
-            Découvrez des activités guidées pouvant être utilisées
-            en classe.
-        </p>
-
-        <a class="button" href="#">
-            Voir les activités
-        </a>
-
-    </div>
+    </select>
 
 
-    <div class="card">
+    <label>Filière</label>
 
-        <div class="icon">📚</div>
+    <select id="filiere">
 
-        <h3>Ressources</h3>
+        <option value="">-- Choisir la filière --</option>
 
-        <p>
-            Accédez aux ressources pédagogiques associées aux différents
-            thèmes de l'énergie.
-        </p>
+        <option>Sciences Mathématiques</option>
 
-        <a class="button" href="#">
-            Ressources
-        </a>
+        <option>Sciences Expérimentales</option>
 
-    </div>
+    </select>
 
 
-    <div class="card">
+    <label>Partie du programme</label>
 
-        <div class="icon">📝</div>
+    <select id="partie">
 
-        <h3>Préparer une activité</h3>
+        <option value="">-- Choisir la partie --</option>
 
-        <p>
-            Construisez progressivement une activité adaptée aux objectifs
-            d'apprentissage.
-        </p>
+        <option>Partie 1 — Travail et énergie mécanique</option>
 
-        <a class="button" href="#">
-            Préparer
-        </a>
+        <option>Partie 2 — Électricité</option>
 
-    </div>
+    </select>
 
 
-    <div class="card">
+    <label>Chapitre</label>
 
-        <div class="icon">📊</div>
+    <select id="chapitre">
 
-        <h3>Évaluation</h3>
+        <option value="">-- Choisir le chapitre --</option>
 
-        <p>
-            Consultez et préparez des activités d'évaluation pour les élèves.
-        </p>
+        <option>Chapitre 1 — Rappels</option>
 
-        <a class="button" href="#">
-            Évaluer
-        </a>
+        <option>Chapitre 2 — Rappels</option>
 
-    </div>
+        <option>Chapitre 3 — Énergie cinétique</option>
 
+        <option>
+            Chapitre 4 — Travail et énergie potentielle de pesanteur
+        </option>
+
+        <option>Chapitre 5 — Énergie mécanique</option>
+
+        <option>Chapitre 6 — Énergie interne</option>
+
+        <option>Chapitre 7 — Transfert thermique</option>
+
+    </select>
 
 </section>
 
+
+<!-- RESSOURCES -->
+
+<section class="section">
+
+    <h3>📖 2. Ressources pédagogiques</h3>
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <div class="icon">🎯</div>
+
+            <h4>Objectifs pédagogiques</h4>
+
+            <p>
+                Consulter les objectifs du chapitre et les compétences
+                à développer chez l'élève.
+            </p>
+
+            <button class="button">
+                Consulter
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🧠</div>
+
+            <h4>Prérequis</h4>
+
+            <p>
+                Identifier les connaissances nécessaires avant
+                d'aborder le chapitre.
+            </p>
+
+            <button class="button">
+                Consulter
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔬</div>
+
+            <h4>Activités expérimentales</h4>
+
+            <p>
+                Activités basées sur une démarche scientifique
+                et les orientations pédagogiques.
+            </p>
+
+            <button class="button">
+                Consulter
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎮</div>
+
+            <h4>Simulations</h4>
+
+            <p>
+                Utiliser des simulations interactives pour
+                construire les concepts physiques.
+            </p>
+
+            <button class="button">
+                Consulter
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📝</div>
+
+            <h4>Exercices</h4>
+
+            <p>
+                Exercices progressifs adaptés au niveau
+                et aux objectifs du chapitre.
+            </p>
+
+            <button class="button">
+                Consulter
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎥</div>
+
+            <h4>Vidéos explicatives</h4>
+
+            <p>
+                Explications des notions et accompagnement
+                dans la résolution des exercices.
+            </p>
+
+            <button class="button">
+                Consulter
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- IA -->
+
+<section class="section">
+
+    <h3>🤖 3. Assistant pédagogique IA</h3>
+
+    <p>
+        L'enseignant peut demander à l'IA de générer une ressource
+        adaptée à son objectif pédagogique.
+    </p>
+
+
+    <label>Type de ressource</label>
+
+    <select id="typeRessource">
+
+        <option>Activité expérimentale</option>
+
+        <option>Exercice</option>
+
+        <option>QCM</option>
+
+        <option>Situation-problème</option>
+
+        <option>Évaluation</option>
+
+        <option>Remédiation</option>
+
+    </select>
+
+
+    <label>Objectif pédagogique</label>
+
+    <textarea
+        id="objectif"
+        placeholder="Exemple : Faire comprendre à l'élève que l'énergie potentielle de pesanteur dépend de l'altitude...">
+    </textarea>
+
+
+    <label>Niveau de difficulté</label>
+
+    <select id="difficulte">
+
+        <option>Facile</option>
+
+        <option>Moyen</option>
+
+        <option>Difficile</option>
+
+    </select>
+
+
+    <label>Consigne particulière pour l'IA</label>
+
+    <textarea
+        id="consigne"
+        placeholder="Exemple : proposer une situation réelle, puis guider l'élève progressivement vers la formule Epp = mg(z-z0).">
+    </textarea>
+
+
+    <button
+        class="button ai-button"
+        onclick="genererActivite()">
+
+        ✨ Générer une ressource avec l'IA
+
+    </button>
+
+
+    <div id="aiResult" class="ai-result">
+
+        <h3>✨ Proposition générée</h3>
+
+        <p>
+            Cette zone affichera la ressource générée par
+            l'intelligence artificielle.
+        </p>
+
+        <p>
+            <strong>Exemple :</strong>
+        </p>
+
+        <p>
+            Une activité basée sur un barrage hydroélectrique est proposée.
+            L'élève observe la différence d'altitude entre deux positions
+            puis analyse les forces exercées sur un objet.
+        </p>
+
+        <p>
+            L'activité peut ensuite être adaptée automatiquement :
+        </p>
+
+        <span class="tag">niveau facile</span>
+
+        <span class="tag">démarche scientifique</span>
+
+        <span class="tag">simulation</span>
+
+        <span class="tag">calcul</span>
+
+    </div>
+
+</section>
+
+
+<!-- DIFFERENCIATION -->
+
+<section class="section">
+
+    <h3>🧩 4. Différencier l'enseignement</h3>
+
+    <p>
+        L'enseignant pourra demander à l'IA de transformer
+        une même activité selon les besoins des élèves.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>🟢 Élève en difficulté</h4>
+
+            <p>
+                Simplifier les consignes, ajouter des indices
+                et décomposer le raisonnement.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h4>🟡 Niveau intermédiaire</h4>
+
+            <p>
+                Proposer une activité guidée avec quelques
+                étapes de raisonnement.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h4>🔴 Élève avancé</h4>
+
+            <p>
+                Proposer une situation complexe nécessitant
+                davantage d'autonomie.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+    ENERGIE-LAB — Prototype pédagogique intelligent
+
+</footer>
+
+
+<script>
+
+function genererActivite() {
+
+    let resultat = document.getElementById("aiResult");
+
+    resultat.style.display = "block";
+
+    resultat.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+
 </body>
+
 </html>
