@@ -3,177 +3,217 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ENERGIE-LAB — Espace Enseignant</title>
+<title>ENERGIE-LAB — Espace Enseignant</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #1f2937;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
 
-        header {
-            background: #0b4f71;
-            color: white;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header {
+    background: #0b4f71;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
+header a {
+    color: white;
+    text-decoration: none;
+}
 
-        .hero {
-            background: white;
-            padding: 55px 20px;
-            text-align: center;
-        }
+.hero {
+    background: white;
+    padding: 55px 20px;
+    text-align: center;
+}
 
-        .hero h2 {
-            color: #0b4f71;
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
+.hero h2 {
+    color: #0b4f71;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
 
-        .hero p {
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.7;
-            color: #555;
-        }
+.hero p {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.7;
+    color: #555;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 35px auto;
-            padding: 0 20px;
-        }
+.container {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
 
-        .section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 16px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-        }
+.section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
 
-        .section h3 {
-            color: #0b4f71;
-            margin-top: 0;
-        }
+.section h3 {
+    color: #0b4f71;
+    margin-top: 0;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
 
-        .card {
-            background: #f7f9fc;
-            padding: 25px;
-            border-radius: 14px;
-            border: 1px solid #e5e7eb;
-        }
+select,
+textarea,
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
 
-        .icon {
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
 
-        .card h4 {
-            color: #0b4f71;
-            margin-bottom: 10px;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
 
-        select,
-        textarea,
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            margin-bottom: 18px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 15px;
-        }
+.card {
+    background: #f7f9fc;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
 
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+.icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+.card h4 {
+    color: #0b4f71;
+}
 
-        .button {
-            display: inline-block;
-            padding: 13px 22px;
-            background: #0b4f71;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            text-decoration: none;
-        }
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    background: #0b4f71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+}
 
-        .button:hover {
-            opacity: 0.9;
-        }
+.button:hover {
+    opacity: 0.9;
+}
 
-        .ai-button {
-            background: #6b4eff;
-            width: 100%;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.chapter-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
 
-        .ai-result {
-            display: none;
-            margin-top: 25px;
-            padding: 25px;
-            background: #f1efff;
-            border-left: 5px solid #6b4eff;
-            border-radius: 10px;
-            line-height: 1.7;
-        }
+.available {
+    border-left: 5px solid #198754;
+}
 
-        .tag {
-            display: inline-block;
-            background: #e8f2f7;
-            color: #0b4f71;
-            padding: 6px 10px;
-            border-radius: 20px;
-            margin: 4px;
-            font-size: 13px;
-        }
+.coming {
+    border-left: 5px solid #aaa;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #777;
-        }
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-top: 8px;
+}
 
-    </style>
+.status-ok {
+    background: #e6f6ec;
+    color: #198754;
+}
+
+.status-soon {
+    background: #eeeeee;
+    color: #666;
+}
+
+.ai-section {
+    background: linear-gradient(135deg, #f8f6ff, #ffffff);
+}
+
+.ai-button {
+    background: #6b4eff;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ai-result {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: #f1efff;
+    border-left: 5px solid #6b4eff;
+    border-radius: 10px;
+    line-height: 1.7;
+}
+
+.tag {
+    display: inline-block;
+    background: #e8f2f7;
+    color: #0b4f71;
+    padding: 6px 10px;
+    border-radius: 20px;
+    margin: 4px;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+.hidden {
+    display: none;
+}
+
+</style>
 
 </head>
 
@@ -195,9 +235,9 @@
     <h2>👩‍🏫 Espace Enseignant</h2>
 
     <p>
-        Une plateforme numérique pour préparer, adapter et enrichir
-        l'enseignement de la physique grâce aux simulations,
-        aux ressources pédagogiques et à l'intelligence artificielle.
+        Un espace destiné à accompagner l'enseignant dans la
+        préparation, l'adaptation et l'enrichissement de ses
+        activités d'enseignement de la physique.
     </p>
 
 </section>
@@ -206,353 +246,544 @@
 <div class="container">
 
 
-<!-- PARCOURS -->
+<!-- ================================================= -->
+<!-- 1. CONTEXTE -->
+<!-- ================================================= -->
 
 <section class="section">
 
-    <h3>📚 1. Sélectionner le contexte d'enseignement</h3>
-
-    <label>Niveau</label>
-
-    <select id="niveau">
-
-        <option value="">-- Choisir le niveau --</option>
-
-        <option>1ère année Bac</option>
-
-        <option>2ème année Bac</option>
-
-    </select>
+<h3>📚 1. Sélectionner le contexte d'enseignement</h3>
 
 
-    <label>Filière</label>
+<label>Niveau</label>
 
-    <select id="filiere">
+<select id="niveau">
 
-        <option value="">-- Choisir la filière --</option>
+<option value="">
+-- Choisir le niveau --
+</option>
 
-        <option>Sciences Mathématiques</option>
+<option value="1bac">
+1ère année Bac
+</option>
 
-        <option>Sciences Expérimentales</option>
+<option value="2bac">
+2ème année Bac
+</option>
 
-    </select>
-
-
-    <label>Partie du programme</label>
-
-    <select id="partie">
-
-        <option value="">-- Choisir la partie --</option>
-
-        <option>Partie 1 — Travail et énergie mécanique</option>
-
-        <option>Partie 2 — Électricité</option>
-
-    </select>
+</select>
 
 
-    <label>Chapitre</label>
+<label>Filière</label>
 
-    <select id="chapitre">
+<select id="filiere">
 
-        <option value="">-- Choisir le chapitre --</option>
+<option value="">
+-- Choisir la filière --
+</option>
 
-        <option>Chapitre 1 — Rappels</option>
+<option value="sm">
+Sciences Mathématiques
+</option>
 
-        <option>Chapitre 2 — Rappels</option>
+<option value="sex">
+Sciences Expérimentales
+</option>
 
-        <option>Chapitre 3 — Énergie cinétique</option>
+</select>
 
-        <option>
-            Chapitre 4 — Travail et énergie potentielle de pesanteur
-        </option>
 
-        <option>Chapitre 5 — Énergie mécanique</option>
+<label>Partie du programme</label>
 
-        <option>Chapitre 6 — Énergie interne</option>
+<select id="partie">
 
-        <option>Chapitre 7 — Transfert thermique</option>
+<option value="">
+-- Choisir la partie --
+</option>
 
-    </select>
+<option value="energie">
+Partie 1 — Travail et énergie mécanique
+</option>
+
+<option value="autre">
+Autres parties — À développer
+</option>
+
+</select>
 
 </section>
 
 
-<!-- RESSOURCES -->
+<!-- ================================================= -->
+<!-- 2. PARTIE 1 -->
+<!-- ================================================= -->
 
 <section class="section">
 
-    <h3>📖 2. Ressources pédagogiques</h3>
+<h3>⚙️ Partie 1 — Travail et énergie mécanique</h3>
 
-    <div class="grid">
-
-
-        <div class="card">
-
-            <div class="icon">🎯</div>
-
-            <h4>Objectifs pédagogiques</h4>
-
-            <p>
-                Consulter les objectifs du chapitre et les compétences
-                à développer chez l'élève.
-            </p>
-
-            <button class="button">
-                Consulter
-            </button>
-
-        </div>
+<p>
+Sélectionnez un chapitre pour accéder aux ressources
+pédagogiques disponibles.
+</p>
 
 
-        <div class="card">
-
-            <div class="icon">🧠</div>
-
-            <h4>Prérequis</h4>
-
-            <p>
-                Identifier les connaissances nécessaires avant
-                d'aborder le chapitre.
-            </p>
-
-            <button class="button">
-                Consulter
-            </button>
-
-        </div>
+<div class="grid">
 
 
-        <div class="card">
+<!-- CHAPITRE 1 -->
 
-            <div class="icon">🔬</div>
+<div class="card coming">
 
-            <h4>Activités expérimentales</h4>
+<div class="icon">📘</div>
 
-            <p>
-                Activités basées sur une démarche scientifique
-                et les orientations pédagogiques.
-            </p>
+<h4>
+Chapitre 1 — Rappels
+</h4>
 
-            <button class="button">
-                Consulter
-            </button>
+<span class="status status-soon">
+À développer
+</span>
 
-        </div>
+<p>
+Ressources et activités à construire.
+</p>
 
-
-        <div class="card">
-
-            <div class="icon">🎮</div>
-
-            <h4>Simulations</h4>
-
-            <p>
-                Utiliser des simulations interactives pour
-                construire les concepts physiques.
-            </p>
-
-            <button class="button">
-                Consulter
-            </button>
-
-        </div>
+</div>
 
 
-        <div class="card">
+<!-- CHAPITRE 2 -->
 
-            <div class="icon">📝</div>
+<div class="card coming">
 
-            <h4>Exercices</h4>
+<div class="icon">📘</div>
 
-            <p>
-                Exercices progressifs adaptés au niveau
-                et aux objectifs du chapitre.
-            </p>
+<h4>
+Chapitre 2 — Rappels
+</h4>
 
-            <button class="button">
-                Consulter
-            </button>
+<span class="status status-soon">
+À développer
+</span>
 
-        </div>
+<p>
+Ressources et activités à construire.
+</p>
+
+</div>
 
 
-        <div class="card">
+<!-- CHAPITRE 3 -->
 
-            <div class="icon">🎥</div>
+<div class="card coming">
 
-            <h4>Vidéos explicatives</h4>
+<div class="icon">⚡</div>
 
-            <p>
-                Explications des notions et accompagnement
-                dans la résolution des exercices.
-            </p>
+<h4>
+Chapitre 3 — Énergie cinétique
+</h4>
 
-            <button class="button">
-                Consulter
-            </button>
+<span class="status status-soon">
+À développer
+</span>
 
-        </div>
+<p>
+Ressources et activités à construire.
+</p>
 
-    </div>
+</div>
+
+
+<!-- CHAPITRE 4 -->
+
+<div class="card available">
+
+<div class="icon">🔬</div>
+
+<h4>
+Chapitre 4 — Travail et énergie potentielle de pesanteur
+</h4>
+
+<span class="status status-ok">
+✓ Prototype disponible
+</span>
+
+<p>
+Objectifs, prérequis, activités, simulation,
+exploitation et exercices.
+</p>
+
+<a
+href="chapitre4.html"
+class="button">
+
+Ouvrir le chapitre →
+
+</a>
+
+</div>
+
+
+<!-- CHAPITRE 5 -->
+
+<div class="card coming">
+
+<div class="icon">⚙️</div>
+
+<h4>
+Chapitre 5 — Énergie mécanique
+</h4>
+
+<span class="status status-soon">
+À développer
+</span>
+
+<p>
+Ce chapitre sera développé ultérieurement.
+</p>
+
+</div>
+
+
+<!-- CHAPITRE 6 -->
+
+<div class="card coming">
+
+<div class="icon">📗</div>
+
+<h4>
+Chapitre 6
+</h4>
+
+<span class="status status-soon">
+À développer
+</span>
+
+<p>
+Contenu à construire selon la filière et les orientations
+du programme.
+</p>
+
+</div>
+
+
+<!-- CHAPITRE 7 -->
+
+<div class="card coming">
+
+<div class="icon">📗</div>
+
+<h4>
+Chapitre 7
+</h4>
+
+<span class="status status-soon">
+À développer
+</span>
+
+<p>
+Contenu à construire selon la filière et les orientations
+du programme.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- IA -->
+<!-- ================================================= -->
+<!-- 3. RESSOURCES -->
+<!-- ================================================= -->
 
 <section class="section">
 
-    <h3>🤖 3. Assistant pédagogique IA</h3>
+<h3>📖 3. Ressources pédagogiques</h3>
 
-    <p>
-        L'enseignant peut demander à l'IA de générer une ressource
-        adaptée à son objectif pédagogique.
-    </p>
+<div class="grid">
 
 
-    <label>Type de ressource</label>
+<div class="card">
 
-    <select id="typeRessource">
+<div class="icon">🎯</div>
 
-        <option>Activité expérimentale</option>
+<h4>Objectifs pédagogiques</h4>
 
-        <option>Exercice</option>
+<p>
+Identifier les objectifs et compétences visés
+par le chapitre.
+</p>
 
-        <option>QCM</option>
-
-        <option>Situation-problème</option>
-
-        <option>Évaluation</option>
-
-        <option>Remédiation</option>
-
-    </select>
+</div>
 
 
-    <label>Objectif pédagogique</label>
+<div class="card">
 
-    <textarea
-        id="objectif"
-        placeholder="Exemple : Faire comprendre à l'élève que l'énergie potentielle de pesanteur dépend de l'altitude...">
-    </textarea>
+<div class="icon">🧠</div>
 
+<h4>Prérequis</h4>
 
-    <label>Niveau de difficulté</label>
+<p>
+Identifier les connaissances nécessaires avant
+d'aborder une nouvelle notion.
+</p>
 
-    <select id="difficulte">
-
-        <option>Facile</option>
-
-        <option>Moyen</option>
-
-        <option>Difficile</option>
-
-    </select>
+</div>
 
 
-    <label>Consigne particulière pour l'IA</label>
+<div class="card">
 
-    <textarea
-        id="consigne"
-        placeholder="Exemple : proposer une situation réelle, puis guider l'élève progressivement vers la formule Epp = mg(z-z0).">
-    </textarea>
+<div class="icon">🔬</div>
 
+<h4>Activités</h4>
 
-    <button
-        class="button ai-button"
-        onclick="genererActivite()">
+<p>
+Construire des activités suivant une démarche
+scientifique et les orientations pédagogiques.
+</p>
 
-        ✨ Générer une ressource avec l'IA
-
-    </button>
+</div>
 
 
-    <div id="aiResult" class="ai-result">
+<div class="card">
 
-        <h3>✨ Proposition générée</h3>
+<div class="icon">🎮</div>
 
-        <p>
-            Cette zone affichera la ressource générée par
-            l'intelligence artificielle.
-        </p>
+<h4>Simulations</h4>
 
-        <p>
-            <strong>Exemple :</strong>
-        </p>
+<p>
+Intégrer des simulations interactives dans
+les activités d'apprentissage.
+</p>
 
-        <p>
-            Une activité basée sur un barrage hydroélectrique est proposée.
-            L'élève observe la différence d'altitude entre deux positions
-            puis analyse les forces exercées sur un objet.
-        </p>
+</div>
 
-        <p>
-            L'activité peut ensuite être adaptée automatiquement :
-        </p>
 
-        <span class="tag">niveau facile</span>
+<div class="card">
 
-        <span class="tag">démarche scientifique</span>
+<div class="icon">📝</div>
 
-        <span class="tag">simulation</span>
+<h4>Exercices</h4>
 
-        <span class="tag">calcul</span>
+<p>
+Créer des exercices progressifs adaptés
+aux objectifs.
+</p>
 
-    </div>
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎥</div>
+
+<h4>Ressources vidéo</h4>
+
+<p>
+Préparer des supports explicatifs pour accompagner
+l'enseignement.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- DIFFERENCIATION -->
+<!-- ================================================= -->
+<!-- 4. IA -->
+<!-- ================================================= -->
+
+<section class="section ai-section">
+
+<h3>🤖 4. Assistant pédagogique IA</h3>
+
+<p>
+L'enseignant pourra utiliser l'intelligence artificielle
+pour générer et adapter des ressources pédagogiques.
+</p>
+
+
+<label>
+Type de ressource
+</label>
+
+<select id="typeRessource">
+
+<option>
+Activité expérimentale
+</option>
+
+<option>
+Exercice
+</option>
+
+<option>
+QCM
+</option>
+
+<option>
+Situation-problème
+</option>
+
+<option>
+Évaluation
+</option>
+
+<option>
+Remédiation
+</option>
+
+</select>
+
+
+<label>
+Objectif pédagogique
+</label>
+
+<textarea
+id="objectif"
+placeholder="Exemple : connaître et savoir exprimer l'énergie potentielle de pesanteur.">
+</textarea>
+
+
+<label>
+Niveau de difficulté
+</label>
+
+<select id="difficulte">
+
+<option>
+Facile
+</option>
+
+<option>
+Moyen
+</option>
+
+<option>
+Difficile
+</option>
+
+</select>
+
+
+<label>
+Consigne pour l'IA
+</label>
+
+<textarea
+id="consigne"
+placeholder="Exemple : proposer une activité basée sur une situation réelle et guider progressivement l'élève.">
+</textarea>
+
+
+<button
+class="button ai-button"
+onclick="genererRessource()">
+
+✨ Générer une ressource
+
+</button>
+
+
+<div
+id="aiResult"
+class="ai-result">
+
+<h3>
+✨ Proposition pédagogique
+</h3>
+
+<p>
+Voici un aperçu de ce que l'assistant pourra générer.
+</p>
+
+<p>
+<strong>Exemple :</strong>
+activité contextualisée, objectifs, matériel ou simulation,
+consignes, questions guidées et correction.
+</p>
+
+<span class="tag">
+Démarche scientifique
+</span>
+
+<span class="tag">
+Simulation
+</span>
+
+<span class="tag">
+Différenciation
+</span>
+
+<span class="tag">
+Évaluation
+</span>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- 5. DIFFERENCIATION -->
+<!-- ================================================= -->
 
 <section class="section">
 
-    <h3>🧩 4. Différencier l'enseignement</h3>
+<h3>🧩 5. Différenciation pédagogique</h3>
 
-    <p>
-        L'enseignant pourra demander à l'IA de transformer
-        une même activité selon les besoins des élèves.
-    </p>
-
-    <div class="grid">
-
-        <div class="card">
-
-            <h4>🟢 Élève en difficulté</h4>
-
-            <p>
-                Simplifier les consignes, ajouter des indices
-                et décomposer le raisonnement.
-            </p>
-
-        </div>
+<p>
+Une même activité pourra être adaptée selon les besoins
+des élèves.
+</p>
 
 
-        <div class="card">
-
-            <h4>🟡 Niveau intermédiaire</h4>
-
-            <p>
-                Proposer une activité guidée avec quelques
-                étapes de raisonnement.
-            </p>
-
-        </div>
+<div class="grid">
 
 
-        <div class="card">
+<div class="card">
 
-            <h4>🔴 Élève avancé</h4>
+<h4>🟢 Remédiation</h4>
 
-            <p>
-                Proposer une situation complexe nécessitant
-                davantage d'autonomie.
-            </p>
+<p>
+Simplifier les consignes, proposer des indices et
+décomposer le raisonnement.
+</p>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="card">
+
+<h4>🟡 Consolidation</h4>
+
+<p>
+Proposer une activité guidée permettant de consolider
+la notion étudiée.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h4>🔴 Approfondissement</h4>
+
+<p>
+Proposer une situation plus complexe et favoriser
+l'autonomie de l'élève.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
@@ -562,16 +793,17 @@
 
 <footer>
 
-    ENERGIE-LAB — Prototype pédagogique intelligent
+ENERGIE-LAB — Prototype pédagogique
 
 </footer>
 
 
 <script>
 
-function genererActivite() {
+function genererRessource() {
 
-    let resultat = document.getElementById("aiResult");
+    let resultat =
+        document.getElementById("aiResult");
 
     resultat.style.display = "block";
 
